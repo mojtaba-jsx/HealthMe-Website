@@ -141,7 +141,15 @@ table {
 /* ^ ======== Color Variables ======= */
 
 :root {
+}
 
+.gradien-1 {
+  background: rgb(58, 142, 246);
+  background: linear-gradient(
+    90deg,
+    rgba(58, 142, 246, 1) 0%,
+    rgba(111, 58, 250, 1) 100%
+  );
 }
 
 /* * ========= Default Styles ========= */
