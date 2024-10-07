@@ -1,0 +1,113 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-radius: 1rem;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.navbar__logo-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.navbar__logo-text {
+  font-size: 2.4rem;
+  font-family: "dana-bold", Courier, monospace;
+}
+
+.navbar__logo-health-icon {
+  display: block;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--primaryColor);
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+
+.navbar__list__link,
+.navbar__submenu__link {
+  color: var(--primaryColor);
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  transition: all 120ms ease-in;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  border-radius: 0.5rem;
+  font-family: 'dana-bold', Courier, monospace;
+}
+.navbar__list__link:hover {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.navbar__list__link-icon {
+  width: 2rem;
+  height: 2rem;
+  transition: all 120ms ease-in;
+}
+
+.navbar-logo_custom {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* ! SubMenu */
+.navbar__list__item-submenu {
+  position: relative;
+}
+.navbar__list__item-submenu:hover .navbar__submenu {
+  opacity: 100;
+  visibility: visible;
+  transition: all 120ms ease-in;
+}
+.navbar__list__item-submenu:hover .navbar__list__link-icon {
+  transform: rotate(180deg);
+}
+
+.navbar__submenu {
+  width: 14rem;
+  height: 10rem;
+  position: absolute;
+  padding: 1rem;
+  top: 2.8rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.navbar__submenu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar__submenu__link:hover {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.navbar__submenu__link-icon {
+  width: 2rem;
+  height: 2rem;
+}

@@ -141,6 +141,19 @@ table {
 /* ^ ======== Color Variables ======= */
 
 :root {
+  /* * ====Primary Colors==== */
+  --primaryColor: #3a8ef6;
+
+  /* * ====Dark Colors==== */
+  --darkColor: #000000;
+
+  /* * ====White Colors==== */
+  --whiteColor: #ffffff;
+
+  /* * ====Gray Color==== */
+  --gray: #f5f5f5;
+  --lightNavyBlue: #2f5c9f;
+  --GoldColor: gold;
 }
 
 .gradien-1 {
@@ -150,6 +163,14 @@ table {
     rgba(58, 142, 246, 1) 0%,
     rgba(111, 58, 250, 1) 100%
   );
+  
+}
+.gradien-2 {
+  background: #3a8ef6;
+  background: linear-gradient(to right, #3a8ef6 0%, #6f3afa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 0.1px #3a8ef6; /* سایه خیلی کوچک و شفاف */
 }
 
 /* * ========= Default Styles ========= */
@@ -160,6 +181,7 @@ body {
 body,
 html {
   font-family: "dana-medium", Courier, monospace;
+  background-color: #F3F3FD;
 }
 
 .container {

@@ -3,9 +3,8 @@ import React from "react";
 function HealthIcon() {
   return (
     <svg
+     className="health-icon__custom"
       xmlns="http://www.w3.org/2000/svg"
-      width="85"
-      height="85"
       fill="none"
       viewBox="0 0 85 85"
     >

@@ -5,7 +5,9 @@ function Index() {
   return (
     <>
       <div className="home-page">
+        <div className="container">
         <Navbar />
+        </div>
       </div>
     </>
   );

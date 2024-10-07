@@ -3,6 +3,7 @@ import React from "react";
 function Logo() {
   return (
     <svg
+    className="navbar-logo_custom"
       xmlns="http://www.w3.org/2000/svg"
       width="84"
       height="72"
