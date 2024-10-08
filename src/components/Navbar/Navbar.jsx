@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
@@ -13,16 +13,29 @@ import { MdConnectWithoutContact } from "react-icons/md";
 import { RiFileInfoLine } from "react-icons/ri";
 import { RiHealthBookFill } from "react-icons/ri";
 import { IoIosArrowUp } from "react-icons/io";
+import { IoMenu } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 function Navbar() {
+  const mobileMenuRef = useRef(null);
+  const showMobileMenu = () => {
+    mobileMenuRef.current.style.right = "0";
+  };
+  const hideMobileMenu = () => {
+    mobileMenuRef.current.style.right = "-100rem";
+  };
   return (
     <>
       <div className="navbar">
+        <button className="mobile-menu-btn" onClick={showMobileMenu}>
+          <IoMenu className="mobile-menu-btn__icon" />
+        </button>
+        {/* ! Navbar Logo */}
         <div className="navbar__logo">
           <Logo className="navbar__logo-icon" />
           <span className="navbar__logo-text gradien-2">منِ سلامت</span>
           <MdHealthAndSafety className="navbar__logo-health-icon" />
         </div>
-
+        {/* ! Navbar list */}
         <ul className="navbar__list">
           <li className="navbar__list__item">
             <Link className="navbar__list__link" to={"/"}>
@@ -41,7 +54,7 @@ function Navbar() {
           <li className="navbar__list__item  navbar__list__item-submenu">
             <Link className="navbar__list__link" to={"/articles"}>
               ابزار ها
-              <IoIosArrowUp   className="navbar__list__link-icon" />
+              <IoIosArrowUp className="navbar__list__link-icon" />
             </Link>
             <ul className="navbar__submenu">
               <li className="navbar__submenu__item">
@@ -75,12 +88,63 @@ function Navbar() {
           </li>
 
           <li className="navbar__list__item">
-          <Link className="navbar__list__link" to={"/about-us"}>
+            <Link className="navbar__list__link" to={"/about-us"}>
               درباره ما
               <RiFileInfoLine className="navbar__list__link-icon" />
             </Link>
           </li>
         </ul>
+
+        <div className="mobile-menu" ref={mobileMenuRef}>
+          <button className="mobile-menu-close-btn" onClick={hideMobileMenu}>
+            <IoClose className="mobile-menu-close-btn__icon" />
+          </button>
+          <ul className="mobile-menu__list">
+            <li className="mobile-menu__list-item">
+              <Link to={"/"} className="mobile-menu__list-link">
+                صفحه اصلی
+                <IoHomeOutline className="mobile-menu__list-link__icon" />
+              </Link>
+            </li>
+            <li className="mobile-menu__list-item">
+              <Link to={"/articles"} className="mobile-menu__list-link">
+                مقالات
+                <MdOutlineArticle className="mobile-menu__list-link__icon" />
+              </Link>
+            </li>
+            <li className="mobile-menu__list-item">
+              <Link to={"/bmi"} className="mobile-menu__list-link">
+                محاسبه BMI
+                <GiBodyBalance className="mobile-menu__list-link__icon" />
+              </Link>
+            </li>
+            <li className="mobile-menu__list-item">
+              <Link to={"/bmr"} className="mobile-menu__list-link">
+                محاسبه BMR
+                <IoBodyOutline className="mobile-menu__list-link__icon" />
+              </Link>
+            </li>
+            <li className="mobile-menu__list-item">
+              <Link to={"/water"} className="mobile-menu__list-link">
+                محاسبه آب مورد نیاز
+                <GiWaterBottle className="mobile-menu__list-link__icon" />
+              </Link>
+            </li>
+            <li className="mobile-menu__list-item">
+              <Link to={"/aboutus"} className="mobile-menu__list-link">
+                ارتباط با ما
+                <MdConnectWithoutContact className="mobile-menu__list-link__icon" />
+              </Link>
+            </li>
+
+            <li className="mobile-menu__list-item">
+              <Link to={"/"} className="mobile-menu__list-link">
+                درباره ما
+                <RiFileInfoLine className="mobile-menu__list-link__icon" />
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );

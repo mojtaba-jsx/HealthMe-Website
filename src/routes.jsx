@@ -5,6 +5,7 @@ import BmrCalculator from "./pages/BmrCalculator/BmrCalculator";
 import WaterCalculator from "./pages/WaterCalculator/WaterCalculator";
 import ArticleInfo from "./pages/ArticleInfo/ArticleInfo";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import ContactsUs from './pages/ContactsUs/ContactsUs'
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -14,6 +15,7 @@ const routes = [
   { path: "/water", element: <WaterCalculator /> },
   { path: "/articles/:articleInfo", element: <ArticleInfo /> },
   { path: "/about-us", element: <AboutUs /> },
+  { path: "/contact-us", element: <ContactsUs /> },
 ];
 
 export default routes;

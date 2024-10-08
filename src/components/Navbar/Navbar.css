@@ -49,7 +49,7 @@
   align-items: center;
   gap: 0.2rem;
   border-radius: 0.5rem;
-  font-family: 'dana-bold', Courier, monospace;
+  font-family: "dana-bold", Courier, monospace;
 }
 .navbar__list__link:hover {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
@@ -110,4 +110,88 @@
 .navbar__submenu__link-icon {
   width: 2rem;
   height: 2rem;
+}
+
+/* ! Mobile Menu  */
+
+.mobile-menu-btn,
+.mobile-menu-close-btn {
+  width: 3.4rem;
+  height: 3.4rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  background-color: var(--primaryColor);
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-menu-btn__icon {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+
+.mobile-menu {
+  /* display: none; */
+  transition: all 140ms ease-in;
+  right: -100rem;
+  /* visibility: hidden; */
+
+  /* opacity: 0; */
+  position: fixed;
+  top: 0;
+  background-color: var(--primaryColor);
+  height: 100vh;
+  width: 14rem;
+  padding: 1rem;
+  box-shadow: var(--primaryColor) -5px 5px, var(--primaryColor) -10px 10px,
+    var(--primaryColor) -15px 15px, var(--primaryColor) -20px 20px,
+    rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primaryColor);
+
+  gap: 1rem;
+}
+
+.mobile-menu__list-item {
+  border-radius: 1rem;
+}
+
+.mobile-menu__list-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--darkColor);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  transition: all 140ms ease-in;
+}
+
+.mobile-menu__list-link:hover {
+  transform: scale(1.02);
+}
+
+.mobile-menu__list-link__icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.mobile-menu-close-btn {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.mobile-menu-close-btn__icon {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
 }
