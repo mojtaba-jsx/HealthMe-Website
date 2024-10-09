@@ -9,7 +9,7 @@ function Landing() {
         <div className="landing__right">
           <span className="landing__right-badge">
             #سلامتی مهمه
-            <LandingHeatIcon />
+            <LandingHeatIcon className="landing__right-badg-icon" />
           </span>
           <h1 className="landing__right-title">
             با مراقبت از خود، آینده‌ای سالم‌تر بسازید
@@ -19,6 +19,7 @@ function Landing() {
             <span className="landing__right-text-word">BMR</span> و
             <span className="landing__right-text-word">BMI</span> و
             <span className="landing__right-text-word">آب مورد نیاز </span>
+            و مقالات سلامتی
             بدن گامی کوچک در جهت بهبود سلامتی خود بردارید.
           </p>
         </div>

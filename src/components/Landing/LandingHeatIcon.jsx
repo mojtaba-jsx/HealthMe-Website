@@ -3,6 +3,7 @@ import React from "react";
 function LandingHeatIcon() {
   return (
     <svg
+    className="landing-health-icon"
       xmlns="http://www.w3.org/2000/svg"
       width="61"
       height="40"

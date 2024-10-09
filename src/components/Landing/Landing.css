@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .landing__right {
@@ -26,20 +27,41 @@
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
+
 .landing__right-badge:hover {
   transform: scale(1.04);
   cursor: pointer;
+}
+.landing-health-icon {
+  animation: heartbeat 4s infinite;
+}
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
 }
 
 .landing__right-title {
   font-size: 5rem;
   color: var(--primaryColor);
   margin-top: 1rem;
+  font-family: "dana-bold", Courier, monospace;
 }
 
 .landing__right-text {
   font-size: 1.4rem;
   line-height: 1.6rem;
+  text-align: justify;
 }
 .landing__right-text-word {
   font-family: "dana-bold", Courier, monospace;
