@@ -1,5 +1,6 @@
 import React from "react";
 import "./BMIFeature.css";
+import { IoMdArrowRoundBack } from "react-icons/io";
 function BMIFeature() {
   return (
     <>
@@ -13,7 +14,10 @@ function BMIFeature() {
         </div>
 
         <div className="bmi-feature__left">
-          <h1 className="bmi-feature__left-title"> به راحتی BMI خود را محاسبه کنید</h1>
+          <h1 className="bmi-feature__left-title gradien-2">
+            {" "}
+            به راحتی BMI خود را محاسبه کنید
+          </h1>
           <p className="bmi-feature__left-text">
             شاخص توده بدنی یا بی‌ام‌آی (به انگلیسی: body mass index، مخفف BMI)
             سنجشی آماری برای مقایسه وزن و قد یک فرد است. در واقع این سنجش میزان
@@ -23,6 +27,7 @@ function BMIFeature() {
           </p>
           <button className="bmi-feature__left-btn">
             شروع کنید
+            <IoMdArrowRoundBack className="bmi-feature__left-btn-icon" />
           </button>
         </div>
       </div>
