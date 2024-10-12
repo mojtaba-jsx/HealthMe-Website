@@ -1,36 +1,36 @@
 
-.bmi-feature{
+.main-feature{
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
 }
 
 
-.bmi-feature__right{
+.main-feature__right{
     width: 50%;
 }
 
 
-.bmi-feature__right-image{
+.main-feature__right-image{
     width: 100%;
 }
 
 
-.bmi-feature__left{
+.main-feature__left{
     width: 50%;
 
 }
 
 
-.bmi-feature__left-title{
+.main-feature__left-title{
     position: relative;
     font-size: 2rem;
     font-family: 'dana-bold', Courier, monospace;
 }
 
-.bmi-feature__left-title::before{
+.main-feature__left-title::before{
     position: absolute;
     content: '';
     width: 0.4rem;
@@ -40,7 +40,7 @@
 }
 
 
-.bmi-feature__left-text{
+.main-feature__left-text{
     font-size: 1.2rem;
     margin-top: 1rem;
     line-height: 1.6rem;
@@ -48,7 +48,7 @@
 }
 
 
-.bmi-feature__left-btn{
+.main-feature__left-btn{
     padding: 1rem;
     width: 14rem;
     margin-top: 2rem;
@@ -67,12 +67,12 @@
     transition: all 120ms ease-in;
 }
 
-.bmi-feature__left-btn:hover{
+.main-feature__left-btn:hover{
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transform: scale(1.02);
 }
 
-.bmi-feature__left-btn-icon{
+.main-feature__left-btn-icon{
     color: var(--whiteColor);
     width: 2rem;
     height: 2rem;
