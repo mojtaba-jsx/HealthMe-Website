@@ -3,6 +3,7 @@ import "./Index.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Landing from "../../components/Landing/Landing";
 import MainFeatures from "../../components/MainFeatures/MainFeatures";
+import LastArticles from '../../components/LastArticles/LastArticles';
 
 
 function Index() {
@@ -45,6 +46,7 @@ function Index() {
               flex={info.flex}
             />
           ))}
+          <LastArticles/>
         </div>
       </div>
     </>
