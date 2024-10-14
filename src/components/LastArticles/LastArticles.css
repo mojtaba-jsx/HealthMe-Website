@@ -1,5 +1,6 @@
 .last-articles {
   margin-bottom: 4rem;
+  position: relative;
 }
 
 .last-articles__title{
@@ -26,7 +27,7 @@
 }
 .swiper-slide{
   width: 300px !important;
-  height: 400px !important;
+  height:400px !important;
 }
 /* .swiper {
   height: 500px !important; 
@@ -44,4 +45,48 @@
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   
+}
+
+/* ! Slider Btns */
+
+.swiper-navigation {
+  position: relative;     
+  height: 20px;    
+  display: flex;      
+  justify-content: center;
+  margin-top: 20px; 
+  /* background-color: var(--primaryColor); */
+  width: 5rem;
+  padding: 1rem;
+
+}
+
+/* برای دکمه‌های ناوبری */
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative;  /* موقعیت نسبی برای دکمه‌ها */
+  cursor: pointer;
+  /* padding: 10px; */
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  margin: 0 10px;
+  width: 2rem;
+  height: 2rem;
+
+}
+
+
+.swiper-navigation-icon{
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  border-radius: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none; /* حذف آیکون‌ها */
 }
