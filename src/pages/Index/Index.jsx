@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Landing from "../../components/Landing/Landing";
 import MainFeatures from "../../components/MainFeatures/MainFeatures";
 import LastArticles from '../../components/LastArticles/LastArticles';
-
+import HealthUp from '../../components/HealthUp/HealthUp'
 
 function Index() {
   const [MainFeatureInfos, setMainFeatureInfos] = useState([
@@ -48,6 +48,7 @@ function Index() {
           ))}
           <LastArticles/>
         </div>
+          <HealthUp/>
       </div>
     </>
   );
