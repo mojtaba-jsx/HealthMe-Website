@@ -199,6 +199,25 @@ a {
 /* !=======Responsive Media Queries======= */
 
 @media (max-width: 1400px) {
+  /* * HealthUp Component */
+  .health-up {
+    flex-direction: column;
+  }
+  .health-up__left-title {
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+  .health-up__left {
+    width: 100%;
+    margin: 2rem auto;
+  }
+  .health-up__left-text {
+    text-align: center;
+  }
+  .health-up__right{
+    width: 80%;
+    
+}
 }
 
 @media (max-width: 1200px) {
@@ -260,6 +279,10 @@ a {
     margin: 0.5rem auto;
     text-align: center;
   }
+  /* * HealthUp Component */
+  .health-up__left-title{
+    font-size: 3.4rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -274,6 +297,10 @@ a {
   .landing__right-title {
     font-size: 2.4rem;
   }
+    /* * HealthUp Component */
+    .health-up__left-title{
+      font-size: 2.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -293,15 +320,22 @@ a {
     height: 16rem;
   }
   /* * mainFeature Component */
-  .main-feature__left-title{
+  .main-feature__left-title {
     font-size: 1.4rem;
   }
-  .main-feature__left-text{
+  .main-feature__left-text {
     font-size: 1rem;
   }
-  .main-feature__left-btn{
+  .main-feature__left-btn {
     font-size: 1rem;
   }
+      /* * HealthUp Component */
+      .health-up__left-title{
+        font-size: 2rem;
+      }
+      .health-up__left-text{
+        font-size: 1rem;
+      }
 }
 
 @media (max-width: 320px) {
