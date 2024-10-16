@@ -1,0 +1,25 @@
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.footer__logo-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.footer__logo-text {
+  font-size: 2.4rem;
+  font-family: "dana-bold", Courier, monospace;
+}
+
+.footer__logo-health-icon {
+  display: block;
+  position: absolute;
+
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--primaryColor);
+}
