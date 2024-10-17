@@ -1,3 +1,9 @@
+.footer {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    padding-top: 2rem;
+}
+
 .footer__logo {
   display: flex;
   align-items: center;
@@ -18,8 +24,84 @@
 .footer__logo-health-icon {
   display: block;
   position: absolute;
-
+  left: 1rem;
+  top: -1rem;
   width: 2.2rem;
   height: 2.2rem;
   color: var(--primaryColor);
+}
+
+.footer {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.footer__row1-text {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: "dana-bold", Courier, monospace;
+  display: flex;
+  align-items: center;
+}
+
+.footer__row1-text-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primaryColor);
+  margin-bottom: 0.5rem;
+}
+
+.footer__row2-title,
+.footer__row3-title,
+.footer__row4-title {
+  color: var(--primaryColor);
+  font-family: "dana-bold", Courier, monospace;
+  font-size: 1.2rem;
+}
+
+.footer__row2-list,
+.footer__row3-list,
+.footer__row4-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer__row2-list__link,
+.footer__row3-list__link {
+  color: var(--darkColor);
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  transition: all 120ms ease-in;
+}
+
+.footer__row3-list__link:hover {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+.footer__row2-list__link:hover {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+
+.footer__row4-list__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "dana-bold", Courier, monospace;
+  font-size: 1.2rem;
+  transition: all 120ms ease-in;
+  cursor: pointer;
+}
+.footer__row4-list__item-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primaryColor);
+}
+
+.footer__row4-list__item:hover {
+  transform: scale(1.04);
 }

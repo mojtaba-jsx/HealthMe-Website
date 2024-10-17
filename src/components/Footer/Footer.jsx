@@ -5,6 +5,7 @@ import { MdHealthAndSafety } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import { MdLocalPhone } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
+import { TiTick } from "react-icons/ti";
 import Logo from "../Logo/Logo";
 function Footer() {
   return (
@@ -16,12 +17,15 @@ function Footer() {
             <span className="footer__logo-text gradien-2">منِ سلامت</span>
             <MdHealthAndSafety className="footer__logo-health-icon" />
           </div>
-          <p className="footer__row1-text">سلامتی و تندرسی را بهبود بخشید.</p>
+          <p className="footer__row1-text">
+            سلامتی و تندرسی را بهبود بخشید.
+            <TiTick className="footer__row1-text-icon" />
+          </p>
         </div>
 
         <div className="footer__row2">
+          <span className="footer__row2-title">صفحات</span>
           <ul className="footer__row2-list">
-            <li className="footer__row2-list__item">صفحات</li>
             <li className="footer__row2-list__item">
               <Link to={"/"} className="footer__row2-list__link">
                 صفحه اصلی
@@ -46,8 +50,8 @@ function Footer() {
         </div>
 
         <div className="footer__row3">
+          <span className="footer__row3-title">ابزار ها</span>
           <ul className="footer__row3-list">
-            <li className="footer__row3-list__item">ابزار ها</li>
             <li className="footer__row3-list__item">
               <Link to={"/bmi"} className="footer__row3-list__link">
                 {" "}
@@ -69,16 +73,15 @@ function Footer() {
         </div>
 
         <div className="footer__row4">
+          <span className="footer__row4-title">ارتباط با من</span>
           <ul className="footer__row4-list">
-            <li className="footer__row4-list__item">ارتباط با من</li>
-
             <li className="footer__row4-list__item">
               mojtaba.jsx@gmail.com
               <MdOutlineEmail className="footer__row4-list__item-icon" />
             </li>
 
             <li className="footer__row4-list__item">
-              +989218750654
+                09218750654
               <MdLocalPhone className="footer__row4-list__item-icon" />
             </li>
 
