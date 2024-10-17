@@ -1,7 +1,7 @@
 .footer {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 .footer__logo {
@@ -58,7 +58,7 @@
 .footer__row4-title {
   color: var(--primaryColor);
   font-family: "dana-bold", Courier, monospace;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .footer__row2-list,
@@ -104,4 +104,49 @@
 
 .footer__row4-list__item:hover {
   transform: scale(1.04);
+}
+
+.after-footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  word-spacing: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding-top: 1rem;
+
+}
+
+.after-footer__text {
+  font-size: 1.4rem;
+}
+
+.after-footer__icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--redColor);
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  background: none;
+  transition: all 120ms ease-in;
+  cursor: pointer;
+}
+.after-footer__icon:hover {
+  transform: scale(1.2);
+}
+
+.after-footer__link {
+  color: var(--darkColor);
+  padding-right: 0.5rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: var(--primaryColor);
+
+}
+
+.after-footer__link-icon{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
 }

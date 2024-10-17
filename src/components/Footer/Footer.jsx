@@ -6,6 +6,8 @@ import { MdOutlineEmail } from "react-icons/md";
 import { MdLocalPhone } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { TiTick } from "react-icons/ti";
+import { FaHeart } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 import Logo from "../Logo/Logo";
 function Footer() {
   return (
@@ -81,7 +83,7 @@ function Footer() {
             </li>
 
             <li className="footer__row4-list__item">
-                09218750654
+              09218750654
               <MdLocalPhone className="footer__row4-list__item-icon" />
             </li>
 
@@ -91,6 +93,21 @@ function Footer() {
             </li>
           </ul>
         </div>
+      </div>
+
+      <div className="after-footer">
+        <span className="after-footer__text">
+          توسعه داده شده با
+          <FaHeart className="after-footer__icon" />
+          توسط
+          <Link
+            className="after-footer__link"
+            to={"https://github.com/mojtaba-jsx"}
+          >
+            Mojtaba.JSX
+            <FaGithub className="after-footer__link-icon" />
+          </Link>
+        </span>
       </div>
     </>
   );

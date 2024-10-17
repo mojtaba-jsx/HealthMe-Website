@@ -154,6 +154,7 @@ table {
   --gray: #f5f5f5;
   --lightNavyBlue: #2f5c9f;
   --GoldColor: gold;
+  --redColor:#D91656
 }
 
 .gradien-1 {
@@ -266,6 +267,18 @@ a {
   .landing__right-badge {
     margin: 1rem auto;
   }
+  /* * Footer Component */
+  .footer{
+     flex-wrap: wrap;
+  }
+  .footer__row4{
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .footer__row4-list__item{
+    margin: 0 auto;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -299,6 +312,24 @@ a {
   /* * HealthUp Component */
   .health-up__left-title {
     font-size: 2.8rem;
+  }
+  /* * Footer Component */
+  .footer div {
+    width: 80%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .footer__row1-text{
+    justify-content: center;
+  }
+  .footer__logo{
+    margin: 0 auto;
+  }
+  .footer__row4-list__item{
+    line-height: 2rem;
+  }
+  .footer__row1-text{
+    flex-direction: column-reverse;
   }
 }
 
