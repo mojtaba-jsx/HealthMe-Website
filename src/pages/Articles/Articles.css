@@ -57,6 +57,9 @@
 
 .articles-wrapper__menu__number {
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .articles-wrapper__menu__number-input {
