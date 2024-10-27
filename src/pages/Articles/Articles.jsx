@@ -2,9 +2,11 @@ import React from "react";
 import "./Articles.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 import { FaTh, FaThList } from "react-icons/fa";
 import { RiHealthBookLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
+import { TbArticle } from "react-icons/tb";
 function Articles() {
   return (
     <>
@@ -52,6 +54,7 @@ function Articles() {
                 <input
                   type="number"
                   className="articles-wrapper__menu__number-input"
+                  value={10}
                 />
               </div>
 
@@ -77,15 +80,14 @@ function Articles() {
                     چرا مصرف سبزیجات به سلامتی کمک می کند ؟
                   </h2>
                   <p className="articles-box__left-text">
-                 ...   استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
+                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
                   </p>
-                    <Link className="articles-box__left__text-link">
-                      مطالعه بیشتر ...
-                      <FaRegEye className="articles-box__left__text-link-icon" />
-                    </Link>
+                  <Link className="articles-box__left__text-link">
+                    مطالعه بیشتر ...
+                    <FaRegEye className="articles-box__left__text-link-icon" />
+                  </Link>
                   <span className="articles-box__left-date">
-                    تاریخ انتشار : 
-                    20/2/1402
+                    تاریخ انتشار : 20/2/1402
                   </span>
                 </div>
               </div>
@@ -103,15 +105,14 @@ function Articles() {
                     چرا مصرف سبزیجات به سلامتی کمک می کند ؟
                   </h2>
                   <p className="articles-box__left-text">
-                 ...   استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
+                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
                   </p>
-                    <Link className="articles-box__left__text-link">
-                      مطالعه بیشتر ...
-                      <FaRegEye className="articles-box__left__text-link-icon" />
-                    </Link>
+                  <Link className="articles-box__left__text-link">
+                    مطالعه بیشتر ...
+                    <FaRegEye className="articles-box__left__text-link-icon" />
+                  </Link>
                   <span className="articles-box__left-date">
-                    تاریخ انتشار : 
-                    20/2/1402
+                    تاریخ انتشار : 20/2/1402
                   </span>
                 </div>
               </div>
@@ -129,15 +130,14 @@ function Articles() {
                     چرا مصرف سبزیجات به سلامتی کمک می کند ؟
                   </h2>
                   <p className="articles-box__left-text">
-                 ...   استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
+                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
                   </p>
-                    <Link className="articles-box__left__text-link">
-                      مطالعه بیشتر ...
-                      <FaRegEye className="articles-box__left__text-link-icon" />
-                    </Link>
+                  <Link className="articles-box__left__text-link">
+                    مطالعه بیشتر ...
+                    <FaRegEye className="articles-box__left__text-link-icon" />
+                  </Link>
                   <span className="articles-box__left-date">
-                    تاریخ انتشار : 
-                    20/2/1402
+                    تاریخ انتشار : 20/2/1402
                   </span>
                 </div>
               </div>
@@ -155,21 +155,26 @@ function Articles() {
                     چرا مصرف سبزیجات به سلامتی کمک می کند ؟
                   </h2>
                   <p className="articles-box__left-text">
-                 ...   استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
+                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
                   </p>
-                    <Link className="articles-box__left__text-link">
-                      مطالعه بیشتر ...
-                      <FaRegEye className="articles-box__left__text-link-icon" />
-                    </Link>
+                  <Link className="articles-box__left__text-link">
+                    مطالعه بیشتر ...
+                    <FaRegEye className="articles-box__left__text-link-icon" />
+                  </Link>
                   <span className="articles-box__left-date">
-                    تاریخ انتشار : 
-                    20/2/1402
+                    تاریخ انتشار : 20/2/1402
                   </span>
                 </div>
               </div>
             </section>
+
+            <button className="articles__btn">
+              نمایش مقاله های بیشتر
+              <TbArticle className="articles__btn-icon" />
+            </button>
           </section>
         </div>
+        <Footer />
       </div>
     </>
   );

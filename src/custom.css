@@ -402,6 +402,9 @@ a {
   .articles-wrapper__menu div {
     flex-direction: column;
   }
+  .articles__btn{
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 320px) {
