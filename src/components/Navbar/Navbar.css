@@ -95,6 +95,8 @@
   justify-content: space-between;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
+  z-index: 10000;
+  background-color: #f3f3fd;
 }
 
 .navbar__submenu__link {

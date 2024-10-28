@@ -177,11 +177,14 @@ table {
 body {
   direction: rtl;
 }
-*,
+
 body,
 html {
   font-family: "dana-medium", Courier, monospace;
   background-color: #f3f3fd;
+}
+* {
+  font-family: "dana-medium", Courier, monospace;
 }
 
 .container {
@@ -317,7 +320,7 @@ a {
     margin: 2rem auto;
     display: block;
   }
-  .articles-wrapper__title{
+  .articles-wrapper__title {
     font-size: 3.2rem;
   }
 }
@@ -402,7 +405,7 @@ a {
   .articles-wrapper__menu div {
     flex-direction: column;
   }
-  .articles__btn{
+  .articles__btn {
     font-size: 1.2rem;
   }
 }
