@@ -221,9 +221,6 @@ a {
   .health-up__right {
     width: 80%;
   }
-}
-
-@media (max-width: 1400px) {
   /* * Articles Component */
   .articles-box {
     width: 80%;
@@ -265,6 +262,18 @@ a {
   .main-feature__left-btn {
     margin: 2rem auto;
   }
+  /* * BMI Component */
+  .bmi__info-text {
+    width: 88%;
+    margin: 1rem auto;
+  }
+  .bmi__logic-img {
+    width: 100%;
+  }
+  .bmi__info-formula-img {
+    width: 50%;
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 992px) {
@@ -300,7 +309,7 @@ a {
   .article-info__bottom-text {
     padding: 1rem;
   }
-  .article-info__share{
+  .article-info__share {
     width: 88%;
     margin: 2rem auto;
   }
@@ -341,20 +350,20 @@ a {
   .article-info__top__texts {
     background: none;
   }
-  .article-info__share{
+  .article-info__share {
     flex-direction: column;
   }
-  .article-info__share__left{
+  .article-info__share__left {
     margin-top: 1rem;
     text-align: center;
   }
-  .article-info__share__right{
+  .article-info__share__right {
     margin-bottom: 1rem;
   }
-  .article-info__share__left-icon{
+  .article-info__share__left-icon {
     display: none;
   }
-  .article-info__share{
+  .article-info__share {
     height: 6rem;
   }
 }
@@ -445,6 +454,22 @@ a {
   /* * Article Info Component */
   .article-info__top__texts-title {
     font-size: 1.2rem;
+  }
+  /* * BMI Component */
+  .bmi__logic__inputs__height-input,
+  .bmi__logic__inputs__weight-input {
+    width: 18rem;
+    font-size: 1.4rem;
+  }
+  .bmi__logic__inputs__weight-label,
+  .bmi__logic__inputs__height-label {
+    font-size: 2rem;
+  }
+  .bmi__title{
+    font-size: 2.4rem;
+  }
+  .bmi__info-title{
+    text-align: center;
   }
 }
 
