@@ -1,6 +1,7 @@
 import React from "react";
 import "./BmrCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 function BmrCalculator() {
   return (
     <>
@@ -59,78 +60,48 @@ function BmrCalculator() {
                 همانطور که می‌بینید میزان کالری مورد نیاز روزانه‌تان از طریق
                 فرمول زیر به دست می‌آید:
               </p>
-              <p className="bmr__info-text">
+              <p className="bmr__info-text bmr__info-text-formul">
                 EAR (Estimated Average Requirement) = PAL * BMR
               </p>
             </div>
 
             <div className="bmr__inputs">
-              {/* ! Row1 */}
-              <div className="bmr__inputs__row1">
-                <div className="bmr__inputs__row1-col1">
-                  <label className="bmr__inputs__row1-col1-label">جنسیت</label>
-                  <select className="bmr__inputs__row1-col1-gender">
-                    <option value="man">مرد</option>
-                    <option value="woman">زن</option>
-                  </select>
-                </div>
+              <label className="bmr__inputs-label">جنسیت</label>
+              <select className="bmr__inputs-gender">
+                <option value="man">مرد</option>
+                <option value="woman">زن</option>
+              </select>
+              <label className="bmr__inputs-label">وزن به کیلوگرم</label>
+              <input type="number" className="bmr__inputs-weight" value={30} />
+              <label className="bmr__inputs-label">سن</label>
+              <input value={30} type="number" className="bmr__inputs-age" />
+              <label className="bmr__inputs-label">قد به سانتی متر</label>
+              <input type="number" value={30} className="bmr__inputs-height" />
+              <label htmlFor="" className="bmr__inputs-label">
+                میزان فعالیت
+              </label>
+              <select className="bmr__inputs-select">
+                <option value="1/2">نشسته (بدون ورزش و ورزش خیلی کم)</option>
 
-                <div className="bmr__inputs__row1-col2">
-                  <label className="bmr__inputs__row1-col2-label">
-                    وزن به کیلوگرم
-                  </label>
-                  <input
-                    type="number"
-                    className="bmr__inputs__row1-col2-weight"
-                    value={30}
-                  />
-                </div>
-              </div>
-              {/* ! Row2 */}
-              <div className="bmr__inputs__row2">
-                <div className="bmr__inputs__row2-col1">
-                  <label className="bmr__inputs__row2-col1-label">سن</label>
-                  <input type="number" className="bmr__inputs__row2-col1-age" />
-                </div>
+                <option value="1/3">فعالیت کم (1 الی 3 ساعت در هفته)</option>
 
-                <div className="bmr__inputs__row2-col2">
-                  <label className="bmr__inputs__row2-col2-label">
-                    قد به سانتی متر
-                  </label>
-                  <input
-                    type="number"
-                    className="bmr__inputs__row2-col2-height"
-                  />
-                </div>
-              </div>
-              {/* ! Row3 */}
-              <div className="bmr__inputs__row3">
-                <label htmlFor="" className="bmr__inputs__row3-label">
-                  میزان فعالیت
-                </label>
-                <select className="bmr__inputs__row3-select">
-                  <option value="1/2">نشسته (بدون ورزش و ورزش خیلی کم)</option>
+                <option value="1/4">فعالیت متوسط (3 الی 5 ساعت در هفته)</option>
 
-                  <option value="1/3">فعالیت کم (1 الی 3 ساعت در هفته)</option>
+                <option value="1/5">بسیار فعال (6 الی 7 ساعت در هفته)</option>
 
-                  <option value="1/4">
-                    فعالیت متوسط (3 الی 5 ساعت در هفته)
-                  </option>
-
-                  <option value="1/5">بسیار فعال (6 الی 7 ساعت در هفته)</option>
-
-                  <option value="1/7">
-                    فعالیت بسیار بالا (فعالیت سخت ورزشی و کاری)
-                  </option>
-                </select>
-                <button className="bmr__btn">محاسبه BMR</button>
-                <span className="bmr__result">
-                  میزان BMR شما :<span className="bmr__result-value">30</span>
-                </span>
-              </div>
+                <option value="1/7">
+                  فعالیت بسیار بالا (فعالیت سخت ورزشی و کاری)
+                </option>
+              </select>
+              <button className="bmr__btn">محاسبه BMR</button>
+              <span className="bmr__result">
+                میزان BMR شما :<span className="bmr__result-value">30</span>
+              </span>
             </div>
+
           </div>
         </div>
+            <Footer />
       </div>
     </>
   );
