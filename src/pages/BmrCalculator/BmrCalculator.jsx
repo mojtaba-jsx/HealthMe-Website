@@ -20,18 +20,7 @@ function BmrCalculator() {
                 بدانید که بدن شما حتی هنگام استراحت، با انجام عملکردهای اساسی
                 برای حفظ زندگی، کالری می‌سوزاند
               </p>
-              <div className="bmr__formula">
-                <span className="bmr__formula-title">بانوان</span>
-                <span className="bmr__formula-text">
-                  ۴۴۷/۵۹۳ + (۴/۳۳۰ x سن) – (x ۹/۲۴۷ وزن به کیلوگرم) + (۳/۰۹۸ x
-                  قد به سانتی متر) = BMR
-                </span>
-                <span className="bmr__formula-title">آقایان</span>
-                <span className="bmr__formula-text">
-                  ۸۸/۳۶۲ + (۵/۶۷۷ x سن) – (x ۱۳/۳۹۷ وزن به کیلوگرم) + (۴/۷۹۹ x
-                  قد به سانتی‌متر) = BMR
-                </span>
-              </div>
+              <img src="./images/bmr.png" alt="bmr" className="bmr-main__formula" />
               <p className="bmr__info-text">
                 اگر به دنبال به دست آوردن کالری مورد نیاز خود هستید، باید ضریب
                 فعالیت‌تان را در نتیجه بی‌ام‌آر خود ضرب کنید. برای محاسبه این

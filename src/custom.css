@@ -274,6 +274,13 @@ a {
     width: 50%;
     object-fit: contain;
   }
+  /* * BMR Component */
+  .bmr__info-text {
+    width: 88%;
+  }
+  .bmr__info-title {
+    margin-right: 1rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -366,6 +373,13 @@ a {
   .article-info__share {
     height: 6rem;
   }
+  /* * BMR Component */
+  .bmr__info__list {
+    text-align: center;
+  }
+  .bmr-title{
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -405,6 +419,22 @@ a {
   /* * Articles Component */
   .articles-wrapper__menu div {
     margin-bottom: 1.2rem;
+  }
+  /* * BMR Component */
+  .bmr__inputs input {
+    width: 18rem;
+  }
+  .bmr__inputs select {
+    width: 18rem;
+  }
+  .bmr__inputs-select {
+    font-size: 1rem !important;
+  }
+  .bmr__info__item {
+    font-size: 1rem;
+  }
+  .bmr__info-text-formul{
+    font-size: 1rem;
   }
 }
 
@@ -465,10 +495,10 @@ a {
   .bmi__logic__inputs__height-label {
     font-size: 2rem;
   }
-  .bmi__title{
+  .bmi__title {
     font-size: 2.4rem;
   }
-  .bmi__info-title{
+  .bmi__info-title {
     text-align: center;
   }
 }

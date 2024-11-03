@@ -19,29 +19,16 @@
 
 .bmr__info-text {
   line-height: 1.4rem;
-  margin-top: 1rem;
   text-align: justify;
   font-size: 1.2rem;
   text-transform: capitalize;
+  width: 98%;
+  margin: 1rem auto;
 }
 
-.bmr__formula {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.bmr__formula span {
-  margin-bottom: 1rem;
-}
-.bmr__formula-text {
-  font-size: 1.4rem;
-}
-
-.bmr__formula-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-family: "dana-bold", Courier, monospace;
+.bmr-main__formula{
+  margin: 1rem auto;
+  width: 100%;
 }
 
 .bmr__info__list {
