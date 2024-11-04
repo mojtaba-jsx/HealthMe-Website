@@ -1,0 +1,114 @@
+
+
+.water-calculator__info {
+  margin-top: 4rem;
+}
+.water-calculator__info-title {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 4rem;
+  font-family: "dana-bold", Courier, monospace;
+  font-weight: bold;
+  color: var(--primaryColor);
+}
+
+.water-calculator__info-subtitle {
+  font-size: 1.6rem;
+  font-family: "dana-bold", Courier, monospace;
+  font-weight: bold;
+}
+
+.water-calculator__info-text {
+  margin-top: 1rem;
+  line-height: 1.4rem;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+.water-calculator__info-image {
+  width: 40rem;
+  height: 40rem;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+
+.water-calculator__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.water-calculator__form-label {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  color: var(--primaryColor);
+  font-family: "dana-bold", Courier, monospace;
+  font-weight: bold;
+}
+
+.water-calculator__form-input {
+  padding: 0.5rem;
+  height: 4rem;
+  width: 26rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  outline: none;
+  font-size: 2rem;
+  color: var(--primaryColor);
+  font-weight: bold;
+}
+.water-calculator__form-select {
+  width: 30rem;
+  height: 4rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  background-color: var(--whiteColor);
+  color: var(--primaryColor);
+  text-align: center;
+  font-size: 1.4rem;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.water-calculator__btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 14rem;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  cursor: pointer;
+  transition: all 120ms ease-in;
+}
+.water-calculator__btn:hover {
+  transform: scale(1.04);
+}
+
+.water-calculator__result {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.water-calculator__result-value {
+  font-size: 2.8rem;
+  color: var(--primaryColor);
+}
