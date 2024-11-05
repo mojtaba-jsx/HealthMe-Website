@@ -281,6 +281,18 @@ a {
   .bmr__info-title {
     margin-right: 1rem;
   }
+  /* * Water Component */
+  .water-calculator__info-text {
+    width: 94%;
+    margin: 1rem auto;
+  }
+  .water-calculator__info-subtitle {
+    margin-right: 1rem;
+    margin-top: 2rem;
+  }
+  .water-calculator__info-title {
+    font-size: 3.4rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -377,9 +389,24 @@ a {
   .bmr__info__list {
     text-align: center;
   }
-  .bmr-title{
+  .bmr-title {
     font-size: 2rem;
   }
+  /* * Water Component */
+  .water-calculator__info-title {
+    font-size: 2.4rem;
+  }
+  .water-calculator__info-subtitle {
+    font-size: 1.2rem;
+  }
+  .water-calculator__info-text {
+    font-size: 1rem;
+  }
+  .water-calculator__info-image{
+    width: 94%;
+    height: 94%;
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -433,9 +460,23 @@ a {
   .bmr__info__item {
     font-size: 1rem;
   }
-  .bmr__info-text-formul{
+  .bmr__info-text-formul {
     font-size: 1rem;
   }
+  /* * Water Component */
+  .water-calculator__info-title {
+    font-size: 1.6rem;
+  }
+  .water-calculator__form-label input {
+    width: 20rem;
+  }
+  .water-calculator__form-label select{
+    width: 20rem;
+  }
+  .water-calculator__form-label{
+    font-size: 2rem;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -501,6 +542,22 @@ a {
   .bmi__info-title {
     text-align: center;
   }
+  /* * Water Component */
+.water-calculator__form-label input {
+  width: 16rem;
+  font-size: 1.2rem;
+}
+.water-calculator__form-label select {
+  width: 16rem;
+}
+.water-calculator__form-label{
+  font-size: 1.6rem;
+}
+.water-calculator__result{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 }
 
 @media (max-width: 320px) {
