@@ -81,7 +81,7 @@ function Navbar() {
           </li>
 
           <li className="navbar__list__item">
-            <Link className="navbar__list__link" to={"/about-us"}>
+            <Link className="navbar__list__link" to={"/contact-us"}>
               ارتباط با ما
               <MdConnectWithoutContact className="navbar__list__link-icon" />
             </Link>
