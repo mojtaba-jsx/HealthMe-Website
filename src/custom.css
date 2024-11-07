@@ -348,6 +348,17 @@ a {
     width: auto;
     margin: 1rem auto;
   }
+  /* * About Us Component */
+  .about-us__info{
+    flex-direction: column-reverse;
+  }
+  .about-us__image{
+    width: 80%;
+  }
+  .about-us__info__texts{
+    width: 80%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -511,6 +522,13 @@ a {
   }
   .contact-us__info__left__maninfo__place-text {
     line-height: 1.4rem;
+  }
+  /* * About Us Component */
+  .about-us__info__texts-title{
+    font-size: 2rem;
+  }
+  .about-us__info__texts-text{
+    font-size: 1rem;
   }
 }
 
