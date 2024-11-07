@@ -55,15 +55,15 @@ function ContactUs() {
                   className="contact-us__info__left__socials-instagram"
                   target="_blank"
                 >
-                  <FaInstagram className="contact-us__info__left__socials-instagram-link" />
+                  <FaInstagram className="contact-us__info__left__socials-instagram-icon" />
                 </Link>
 
                 <Link
                   to={"mailto:mojtaba.jsx@gmail.com"}
-                  className="contact-us__info__left__socials-gmail0link"
+                  className="contact-us__info__left__socials-gmail"
                   target="_blank"
                 >
-                  <BiLogoGmail className="contact-us__info__left__socials-gmail-link-icon" />
+                  <BiLogoGmail className="contact-us__info__left__socials-gmail-icon" />
                 </Link>
               </div>
               <span className="contact-us__info__text">با ما همراه باشید </span>

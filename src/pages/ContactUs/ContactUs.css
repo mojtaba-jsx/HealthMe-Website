@@ -45,8 +45,8 @@
 
 .contact-us__info__left__socials-github-icon,
 .contact-us__info__left__socials-telegram-icon,
-.contact-us__info__left__socials-instagram-link,
-.contact-us__info__left__socials-gmail-link-icon {
+.contact-us__info__left__socials-instagram-icon,
+.contact-us__info__left__socials-gmail-icon {
   width: 5rem;
   height: 5rem;
   transition: all 120ms ease-in;
@@ -66,17 +66,17 @@
   transform: scale(1.2);
 }
 
-.contact-us__info__left__socials-instagram-link {
+.contact-us__info__left__socials-instagram {
   color: var(--redColor);
 }
-.contact-us__info__left__socials-instagram-link:hover {
+.contact-us__info__left__socials-instagram-icon:hover {
   transform: scale(1.2);
 }
 
-.contact-us__info__left__socials-gmail-link-icon {
+.contact-us__info__left__socials-gmail-icon {
   color: var(--redColor);
 }
-.contact-us__info__left__socials-gmail-link-icon:hover {
+.contact-us__info__left__socials-gmail-icon:hover {
   transform: scale(1.2);
 }
 
