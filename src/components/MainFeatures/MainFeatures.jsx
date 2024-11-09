@@ -1,9 +1,17 @@
 import React, { useEffect } from "react";
 import "./MainFeatures.css";
+import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
-function MainFeatures({ title, text, image, flex }) {
+function MainFeatures({
+  title,
+  text,
+  image,
+  flex,
+  featurePath,
+  featureBtnText,
+}) {
   useEffect(() => {
     AOS.init({
       duration: 2000, // مدت زمان انیمیشن‌ها به میلی‌ثانیه
@@ -28,10 +36,10 @@ function MainFeatures({ title, text, image, flex }) {
           <p data-aos="fade-left" className="main-feature__left-text">
             {text}
           </p>
-          <button className="main-feature__left-btn">
-            شروع کنید
+          <Link to={featurePath} className="main-feature__left-btn">
+            {featureBtnText}
             <IoMdArrowRoundBack className="main-feature__left-btn-icon" />
-          </button>
+          </Link>
         </div>
       </div>
     </>

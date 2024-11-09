@@ -3,6 +3,7 @@
   justify-content: space-between;
   padding-top: 2rem;
   border-radius: 1rem;
+
 }
 
 .navbar__logo {
@@ -10,6 +11,12 @@
   align-items: center;
   gap: 1rem;
   position: relative;
+  transition: all 120ms ease-in;
+  border-radius: 1rem;
+  border: none;
+}
+.navbar__logo:hover{
+  transform: scale(1.08);
 }
 
 .navbar__logo-icon {
@@ -170,11 +177,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--darkColor);
+  color: var(--whiteColor);
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transition: all 140ms ease-in;
 }
 

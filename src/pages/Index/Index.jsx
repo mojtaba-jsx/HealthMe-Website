@@ -15,6 +15,8 @@ function Index() {
       image: "./images/bmi-feature.png",
       flex: "row",
       icon: "GiBodyBalance",
+      featurePath: "/bmi",
+      featureBtnText: "محاسبه BMI",
     },
     {
       id: 2,
@@ -23,6 +25,8 @@ function Index() {
       image: "./images/bmr-feature.png",
       flex: "row-reverse",
       icon: "IoBodyOutline",
+      featurePath: "/bmr",
+      featureBtnText: "محاسبه BMR",
     },
     {
       id: 2,
@@ -31,6 +35,8 @@ function Index() {
       image: "./images/water.png",
       flex: "row",
       icon: "IoBodyOutline",
+      featurePath: "/water",
+      featureBtnText: "محاسبه آب",
     },
   ]);
 
@@ -46,6 +52,8 @@ function Index() {
               title={info.title}
               text={info.text}
               image={info.image}
+              featurePath={info.featurePath}
+              featureBtnText={info.featureBtnText}
               flex={info.flex}
             />
           ))}

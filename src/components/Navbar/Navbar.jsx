@@ -30,11 +30,11 @@ function Navbar() {
           <IoMenu className="mobile-menu-btn__icon" />
         </button>
         {/* ! Navbar Logo */}
-        <div className="navbar__logo">
+        <Link to={'/'} className="navbar__logo">
           <Logo className="navbar__logo-icon" />
           <span className="navbar__logo-text gradien-2">منِ سلامت</span>
           <MdHealthAndSafety className="navbar__logo-health-icon" />
-        </div>
+        </Link>
         {/* ! Navbar list */}
         <ul className="navbar__list">
           <li className="navbar__list__item">
