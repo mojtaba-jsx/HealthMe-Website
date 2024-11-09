@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AboutUs.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 function AboutUs() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2200, // مدت زمان انیمیشن‌ها به میلی‌ثانیه
+      once: false, // فقط یکبار انیمیشن اجرا می‌شود
+    });
+  }, []);
   return (
     <div className="about-us">
       <div className="container">
@@ -26,6 +34,7 @@ function AboutUs() {
           </div>
           <div className="about-us__image">
             <img
+              data-aos="zoom-in"
               src="./images/about-us.png"
               alt="AboutUs"
               className="about-us__image-tag"

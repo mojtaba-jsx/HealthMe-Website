@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./ContactUs.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -10,6 +12,12 @@ import { FaInstagram } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 
 function ContactUs() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2200, // مدت زمان انیمیشن‌ها به میلی‌ثانیه
+      once: false, // فقط یکبار انیمیشن اجرا می‌شود
+    });
+  }, []);
   return (
     <>
       <div className="contact-us">
@@ -18,6 +26,7 @@ function ContactUs() {
           <div className="contact-us__info">
             <div className="contact-us__info__right">
               <img
+                data-aos="zoom-in"
                 src="./images/contact-us.png"
                 alt="ContactUs"
                 className="contact-us__info__right-image"
@@ -35,6 +44,7 @@ function ContactUs() {
               </div>
               <div className="contact-us__info__left__socials">
                 <Link
+                  data-aos="fade-right"
                   to={"https://github.com/mojtaba-jsx"}
                   className="contact-us__info__left__socials-github"
                   target="_blank"
@@ -43,6 +53,7 @@ function ContactUs() {
                 </Link>
 
                 <Link
+                  data-aos="fade-right"
                   className="contact-us__info__left__socials-telegram"
                   to={"https://t.me/Mojtaba_jsx"}
                   target="_blank"
@@ -51,6 +62,7 @@ function ContactUs() {
                 </Link>
 
                 <Link
+                  data-aos="fade-right"
                   to={"https://www.instagram.com/mojtaba.jsx"}
                   className="contact-us__info__left__socials-instagram"
                   target="_blank"
@@ -59,6 +71,7 @@ function ContactUs() {
                 </Link>
 
                 <Link
+                  data-aos="fade-right"
                   to={"mailto:mojtaba.jsx@gmail.com"}
                   className="contact-us__info__left__socials-gmail"
                   target="_blank"
