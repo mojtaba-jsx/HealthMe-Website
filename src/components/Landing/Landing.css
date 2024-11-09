@@ -56,12 +56,14 @@
   color: var(--primaryColor);
   margin-top: 1rem;
   font-family: "dana-bold", Courier, monospace;
+  height: 4rem;
 }
 
 .landing__right-text {
   font-size: 1.4rem;
   line-height: 1.6rem;
   text-align: justify;
+  margin-top: 5rem;
 }
 .landing__right-text-word {
   font-family: "dana-bold", Courier, monospace;

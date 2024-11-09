@@ -1,7 +1,7 @@
 import React from "react";
 import "./Landing.css";
 import LandingHeatIcon from "./LandingHeatIcon";
-import { LuHeartPulse } from "react-icons/lu";
+import Typewriter from "typewriter-effect";
 function Landing() {
   return (
     <>
@@ -12,15 +12,23 @@ function Landing() {
             <LandingHeatIcon className="landing__right-badg-icon" />
           </span>
           <h1 className="landing__right-title">
-            با مراقبت از خود، آینده‌ای سالم‌تر بسازید
+            <Typewriter
+              options={{
+                strings: ["با مراقبت از خود، آینده‌ای سالم‌تر بسازید"],
+                autoStart: true,
+                loop: true,
+                delay: 100,
+                deleteSpeed: 100,
+                pauseFor:2000
+              }}
+            />
           </h1>
           <p className="landing__right-text">
             با انجام تست های
             <span className="landing__right-text-word">BMR</span> و
             <span className="landing__right-text-word">BMI</span> و
-            <span className="landing__right-text-word">آب مورد نیاز </span>
-            و مقالات سلامتی
-            بدن گامی کوچک در جهت بهبود سلامتی خود بردارید.
+            <span className="landing__right-text-word">آب مورد نیاز </span>و
+            مقالات سلامتی بدن گامی کوچک در جهت بهبود سلامتی خود بردارید.
           </p>
         </div>
 

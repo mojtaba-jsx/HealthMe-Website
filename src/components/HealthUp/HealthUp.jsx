@@ -1,6 +1,8 @@
 import React from "react";
 import "./HealthUp.css";
 import { FaRegSmile } from "react-icons/fa";
+import Typewriter from "typewriter-effect";
+
 function HealthUp() {
   return (
     <>
@@ -14,7 +16,16 @@ function HealthUp() {
         </div>
         <div className="health-up__left">
           <h1 className="health-up__left-title">
-            سالم زندگی کنیم
+            <Typewriter
+              options={{
+                strings: ["سالم زندگی کنیم"],
+                autoStart: true,
+                loop: true,
+                delay: 100,
+                deleteSpeed: 100,
+                pauseFor: 2000,
+              }}
+            />
             <FaRegSmile className="health-up__left-title-icon" />
           </h1>
           <p className="health-up__left-text">

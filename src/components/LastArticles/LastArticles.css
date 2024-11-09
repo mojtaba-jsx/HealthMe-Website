@@ -20,7 +20,7 @@
 }
 .last-articles__slider {
   height: 20rem !important;
-  background-color: red;
+  /* background-color: red; */
 }
 .last-articles-swiper{
   height: 500px !important;
