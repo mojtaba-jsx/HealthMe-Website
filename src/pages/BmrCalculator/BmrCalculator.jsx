@@ -2,6 +2,7 @@ import React from "react";
 import "./BmrCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { IoBodyOutline } from "react-icons/io5";
 function BmrCalculator() {
   return (
     <>
@@ -9,7 +10,10 @@ function BmrCalculator() {
         <div className="container">
           <Navbar />
           <div className="bmr-main">
-            <h1 className="bmr-title">محاسبه BMR</h1>
+            <h1 className="bmr-title">
+              محاسبه BMR
+              <IoBodyOutline />
+            </h1>
             <div className="bmr__info">
               <h2 className="bmr__info-title">BMR چیست ؟</h2>
               <p className="bmr__info-text">
@@ -20,7 +24,11 @@ function BmrCalculator() {
                 بدانید که بدن شما حتی هنگام استراحت، با انجام عملکردهای اساسی
                 برای حفظ زندگی، کالری می‌سوزاند
               </p>
-              <img src="./images/bmr.png" alt="bmr" className="bmr-main__formula" />
+              <img
+                src="./images/bmr.png"
+                alt="bmr"
+                className="bmr-main__formula"
+              />
               <p className="bmr__info-text">
                 اگر به دنبال به دست آوردن کالری مورد نیاز خود هستید، باید ضریب
                 فعالیت‌تان را در نتیجه بی‌ام‌آر خود ضرب کنید. برای محاسبه این
@@ -87,10 +95,9 @@ function BmrCalculator() {
                 میزان BMR شما :<span className="bmr__result-value">30</span>
               </span>
             </div>
-
           </div>
         </div>
-            <Footer />
+        <Footer />
       </div>
     </>
   );

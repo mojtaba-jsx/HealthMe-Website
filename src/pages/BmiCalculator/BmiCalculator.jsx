@@ -2,13 +2,17 @@ import React from "react";
 import "./BmiCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { GiBodyBalance } from "react-icons/gi";
 function BmiCalculator() {
   return (
     <>
       <div className="bmi">
         <div className="container">
           <Navbar />
-          <h1 className="bmi__title">محاسبه BMI</h1>
+          <h1 className="bmi__title">
+            محاسبه BMI
+            <GiBodyBalance />
+          </h1>
           <div className="bmi__info">
             <h2 className="bmi__info-title">BMI چیست ؟</h2>
             <p className="bmi__info-text">

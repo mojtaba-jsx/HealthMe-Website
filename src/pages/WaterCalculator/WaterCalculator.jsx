@@ -2,6 +2,7 @@ import React from "react";
 import "./WaterCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { GiWaterBottle } from "react-icons/gi";
 function WaterCalculator() {
   return (
     <>
@@ -11,6 +12,7 @@ function WaterCalculator() {
           <div className="water-calculator__info">
             <h1 className="water-calculator__info-title">
               محاسبه کننده آب مورد نیاز بدن
+              <GiWaterBottle/>
             </h1>
             <h2 className="water-calculator__info-subtitle">
               چه میزان آب و مایعات در طول روز بنوشیم؟
