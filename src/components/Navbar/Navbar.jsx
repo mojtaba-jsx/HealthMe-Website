@@ -30,7 +30,7 @@ function Navbar() {
           <IoMenu className="mobile-menu-btn__icon" />
         </button>
         {/* ! Navbar Logo */}
-        <Link to={'/'} className="navbar__logo">
+        <Link to={"/"} className="navbar__logo">
           <Logo className="navbar__logo-icon" />
           <span className="navbar__logo-text gradien-2">منِ سلامت</span>
           <MdHealthAndSafety className="navbar__logo-health-icon" />
@@ -52,7 +52,7 @@ function Navbar() {
           </li>
 
           <li className="navbar__list__item  navbar__list__item-submenu">
-            <Link className="navbar__list__link" to={"/articles"}>
+            <Link className="navbar__list__link">
               ابزار ها
               <IoIosArrowUp className="navbar__list__link-icon" />
             </Link>
@@ -131,14 +131,14 @@ function Navbar() {
               </Link>
             </li>
             <li className="mobile-menu__list-item">
-              <Link to={"/aboutus"} className="mobile-menu__list-link">
+              <Link to={"/contact-us"} className="mobile-menu__list-link">
                 ارتباط با ما
                 <MdConnectWithoutContact className="mobile-menu__list-link__icon" />
               </Link>
             </li>
 
             <li className="mobile-menu__list-item">
-              <Link to={"/"} className="mobile-menu__list-link">
+              <Link to={"/about-us"} className="mobile-menu__list-link">
                 درباره ما
                 <RiFileInfoLine className="mobile-menu__list-link__icon" />
               </Link>
