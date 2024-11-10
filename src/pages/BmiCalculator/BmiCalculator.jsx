@@ -26,19 +26,21 @@ function BmiCalculator() {
               توان دوم (x²) قدش به متر بدست می‌آید و فرمول محاسبه آن در سیستم
               متریک چنین است:
             </p>
+          </div>
+          <div className="bmr__images">
             <img
               src="./images/bmi-formula.png"
               alt="bmi"
-              className="bmi__info-formula-img"
+              className="bmr__images-formula-img"
+            />
+            <img
+              src="./images/BMI-1.png"
+              alt="bmi"
+              className="bmr__images-img"
             />
           </div>
 
           <div className="bmi__logic">
-            <img
-              src="./images/BMI-1.png"
-              alt="bmi"
-              className="bmi__logic-img"
-            />
             <div className="bmi__logic__inputs">
               <div className="bmi__logic__inputs__height">
                 <label className="bmi__logic__inputs__height-label">

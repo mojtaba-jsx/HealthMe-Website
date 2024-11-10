@@ -274,6 +274,9 @@ a {
     width: 50%;
     object-fit: contain;
   }
+  .bmr__images{
+    flex-direction: column;
+  }
   /* * BMR Component */
   .bmr__info-text {
     width: 88%;

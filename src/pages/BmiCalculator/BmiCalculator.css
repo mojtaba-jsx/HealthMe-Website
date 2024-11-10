@@ -28,7 +28,12 @@
   font-size: 1.2rem;
 }
 
-.bmi__info-formula-img {
+.bmr__images{
+  display: flex;
+  align-items: center;
+}
+
+.bmr__images-formula-img {
   display: block;
   margin: 1rem auto;
   width: 26rem;
@@ -41,7 +46,7 @@
   margin-top: 1rem;
 }
 
-.bmi__logic-img {
+.bmr__images-img {
   display: block;
   margin: 1rem auto;
   border-radius: 1rem;
