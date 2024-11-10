@@ -1,4 +1,9 @@
-
+.water-calculator__wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 2rem;
+}
 
 .water-calculator__info {
   margin-top: 4rem;

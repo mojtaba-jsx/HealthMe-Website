@@ -296,6 +296,9 @@ a {
   .water-calculator__info-title {
     font-size: 3.4rem;
   }
+  .water-calculator__wrapper{
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 992px) {
