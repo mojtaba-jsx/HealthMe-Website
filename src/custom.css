@@ -617,6 +617,16 @@ a {
     align-items: center;
     justify-content: center;
   }
+
+  /* * Article Info Component */
+
+  .articles__add-comment__form__name-input,
+.articles__add-comment__form__email-input{
+  width: 14rem;
+}
+.articles__comments__title{
+  font-size: 2rem;
+}
 }
 
 @media (max-width: 320px) {

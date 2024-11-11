@@ -231,7 +231,9 @@
 }
 
 .articles__comment{
+  width: 88%;
   display: flex;
+  margin: 1rem auto;
   flex-direction: column;
   border-radius: 0.5rem;
   padding: 1rem;
