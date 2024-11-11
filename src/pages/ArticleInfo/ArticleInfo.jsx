@@ -10,6 +10,10 @@ import { MdOutlineCalendarMonth } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaRegShareSquare } from "react-icons/fa";
+import { FaRegComment } from "react-icons/fa";
+import { IoCheckboxOutline } from "react-icons/io5";
+import { FaPen } from "react-icons/fa6";
+import { FaRegUser } from "react-icons/fa";
 function ArticleInfo() {
   return (
     <>
@@ -25,7 +29,7 @@ function ArticleInfo() {
             <div className="article-info__top__texts">
               <span className="article-info__top__texts-category">#سلامتی</span>
               <h1 className="article-info__top__texts-title">
-                <FaPencilAlt className=""article-info__top__texts-title-icon />
+                <FaPencilAlt className="" article-info__top__texts-title-icon />
                 چرا باید به اندازه کافی در طول روز آب بنوشیم ؟
               </h1>
               <span className="article-info__top__texts-date">
@@ -58,7 +62,7 @@ function ArticleInfo() {
           <div className="article-info__share">
             <div className="article-info__share__left">
               از مقاله خوشت اومد ؟ برای دوستانت بفرست
-              <FaRegShareSquare  className="article-info__share__left-icon" />
+              <FaRegShareSquare className="article-info__share__left-icon" />
             </div>
 
             <div className="article-info__share__right">
@@ -71,6 +75,56 @@ function ArticleInfo() {
               <Link to={"https://www.linkedin.com"}>
                 <FaLinkedin className="article-info__share__right-icon linkedin" />
               </Link>
+            </div>
+          </div>
+
+          <div className="articles__add-comment">
+            <form className="articles__add-comment__form">
+              <h3 className="articles__add-comment__form__title">
+                ثبت نظر
+                <FaPen className="articles__add-comment__form__title-icon" />
+              </h3>
+              <label className="articles__add-comment__form__name">
+                نام و نام خانوادگی :
+                <input
+                  type="text"
+                  className="articles__add-comment__form__name-input"
+                />
+              </label>
+              <label className="articles__add-comment__form__email">
+                ایمیل :
+                <input
+                  type="email"
+                  className="articles__add-comment__form__email-input"
+                />
+              </label>
+              <textarea
+                placeholder="متن نظر را وارد کنید ..."
+                className="articles__add-comment__form__text"
+              ></textarea>
+              <button className="articles__add-comment__form__btn">
+                ثبت نظر
+                <IoCheckboxOutline className="articles__add-comment__form__btn-icon" />
+              </button>
+            </form>
+          </div>
+
+          <div className="articles__comments">
+            <h2 className="articles__comments__title">
+              نظرات
+              <FaRegComment className="articles__comments__title-icon" />
+            </h2>
+            <div className="articles__comment">
+              <span className="articles__comment__name">
+                <FaRegUser className="articles__comment__name-icon" />
+                یوزر جدید
+              </span>
+              <p className="articles__comment-body">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+                نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+              </p>
             </div>
           </div>
         </div>
