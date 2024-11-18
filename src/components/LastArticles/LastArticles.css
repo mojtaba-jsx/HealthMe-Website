@@ -8,6 +8,7 @@
   font-family: 'dana-bold', Courier, monospace;
   color: var(--primaryColor);
   position: relative;
+  
 }
 .last-articles__title::before{
   content: '';
@@ -34,7 +35,7 @@
 } */
 
 .custom-slide {
-  width: 300px !important; 
+  width: 350px !important; 
   height:400px !important; 
   /* background-color: lightblue; */
   display: flex;

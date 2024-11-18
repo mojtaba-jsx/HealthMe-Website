@@ -118,15 +118,21 @@
   border-radius: 1rem;
   width: 12rem;
   height: 10rem;
+  object-fit: cover;
+  
 }
 
 .articles-box__left-title {
   font-family: "dana-bold", Courier, monospace;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  color: var(--darkColor);
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #bcbcbc, 4px 4px 0 #c2c0c0;
 }
 
 .articles-box__left-text {
   margin-top: 1rem;
+  line-height: 1.4rem;
 }
 
 .articles-box__left__text-link {

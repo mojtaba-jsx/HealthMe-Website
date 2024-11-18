@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Articles.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
@@ -8,6 +8,27 @@ import { RiHealthBookLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { TbArticle } from "react-icons/tb";
 function Articles() {
+  useEffect(() => {
+    fetch("http://localhost:3000/articles")
+      .then((res) => res.json())
+      .then((artilcles) => {
+        setArticlesData(artilcles);
+      });
+  });
+
+  const changeValueHandler = (event) => {
+    setArticleShowNumber(event.target.value);
+  };
+
+  const [articlesData, setArticlesData] = useState([]);
+  const [articleShowNumber, setArticleShowNumber] = useState(1);
+
+  const getShortBody = (text, maxLength = 100) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text; // اگر متن کوتاه‌تر از maxLength بود
+  };
   return (
     <>
       <div className="articles">
@@ -54,7 +75,8 @@ function Articles() {
                 <input
                   type="number"
                   className="articles-wrapper__menu__number-input"
-                  value={10}
+                  value={articleShowNumber}
+                  onChange={changeValueHandler}
                 />
               </div>
 
@@ -66,106 +88,33 @@ function Articles() {
             </section>
 
             <section className="articles-boxes">
-              <div className="articles-box">
-                <div className="articles-box__right">
-                  <img
-                    src="./images/last-article.png"
-                    alt="article"
-                    className="articles-box__right-image"
-                  />
-                </div>
+              {articlesData.map((article) => (
+                <div className="articles-box" key={article.id}>
+                  <div className="articles-box__right">
+                    <img
+                      src={article.image}
+                      alt="article"
+                      className="articles-box__right-image"
+                    />
+                  </div>
 
-                <div className="articles-box__left">
-                  <h2 className="articles-box__left-title">
-                    چرا مصرف سبزیجات به سلامتی کمک می کند ؟
-                  </h2>
-                  <p className="articles-box__left-text">
-                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
-                  </p>
-                  <Link className="articles-box__left__text-link">
-                    مطالعه بیشتر ...
-                    <FaRegEye className="articles-box__left__text-link-icon" />
-                  </Link>
-                  <span className="articles-box__left-date">
-                    تاریخ انتشار : 20/2/1402
-                  </span>
+                  <div className="articles-box__left">
+                    <h2 className="articles-box__left-title">
+                      {article.title}
+                    </h2>
+                    <p className="articles-box__left-text">
+                      {getShortBody(article.body)}
+                    </p>
+                    <Link className="articles-box__left__text-link">
+                      مطالعه بیشتر ...
+                      <FaRegEye className="articles-box__left__text-link-icon" />
+                    </Link>
+                    <span className="articles-box__left-date">
+                      تاریخ انتشار : {article.releaseDate}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="articles-box">
-                <div className="articles-box__right">
-                  <img
-                    src="./images/last-article.png"
-                    alt="article"
-                    className="articles-box__right-image"
-                  />
-                </div>
-
-                <div className="articles-box__left">
-                  <h2 className="articles-box__left-title">
-                    چرا مصرف سبزیجات به سلامتی کمک می کند ؟
-                  </h2>
-                  <p className="articles-box__left-text">
-                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
-                  </p>
-                  <Link className="articles-box__left__text-link">
-                    مطالعه بیشتر ...
-                    <FaRegEye className="articles-box__left__text-link-icon" />
-                  </Link>
-                  <span className="articles-box__left-date">
-                    تاریخ انتشار : 20/2/1402
-                  </span>
-                </div>
-              </div>
-              <div className="articles-box">
-                <div className="articles-box__right">
-                  <img
-                    src="./images/last-article.png"
-                    alt="article"
-                    className="articles-box__right-image"
-                  />
-                </div>
-
-                <div className="articles-box__left">
-                  <h2 className="articles-box__left-title">
-                    چرا مصرف سبزیجات به سلامتی کمک می کند ؟
-                  </h2>
-                  <p className="articles-box__left-text">
-                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
-                  </p>
-                  <Link className="articles-box__left__text-link">
-                    مطالعه بیشتر ...
-                    <FaRegEye className="articles-box__left__text-link-icon" />
-                  </Link>
-                  <span className="articles-box__left-date">
-                    تاریخ انتشار : 20/2/1402
-                  </span>
-                </div>
-              </div>
-              <div className="articles-box">
-                <div className="articles-box__right">
-                  <img
-                    src="./images/last-article.png"
-                    alt="article"
-                    className="articles-box__right-image"
-                  />
-                </div>
-
-                <div className="articles-box__left">
-                  <h2 className="articles-box__left-title">
-                    چرا مصرف سبزیجات به سلامتی کمک می کند ؟
-                  </h2>
-                  <p className="articles-box__left-text">
-                    ... استفاده از سبزیجات به بهبود سلامتی کمک زیادی می کند و
-                  </p>
-                  <Link className="articles-box__left__text-link">
-                    مطالعه بیشتر ...
-                    <FaRegEye className="articles-box__left__text-link-icon" />
-                  </Link>
-                  <span className="articles-box__left-date">
-                    تاریخ انتشار : 20/2/1402
-                  </span>
-                </div>
-              </div>
+              ))}
             </section>
 
             <button className="articles__btn">
