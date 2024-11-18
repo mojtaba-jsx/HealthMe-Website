@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LastArticles.css";
 import LastArticlesSlide from "../LastArticlesSlide/LastArticlesSlide";
 // ! Swiper JS
@@ -11,6 +11,24 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 function LastArticles() {
+  useEffect(() => {
+    fetch("http://localhost:3000/articles")
+      .then((res) => res.json())
+      .then((articles) => {
+        setArticlesData(articles);
+      });
+  }, []);
+
+  const [articlesData, setArticlesData] = useState([]);
+  console.log(articlesData);
+
+  const getShortBody = (text, maxLength = 100) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text; // اگر متن کوتاه‌تر از maxLength بود
+  };
+
   return (
     <>
       <div className="last-articles">
@@ -34,20 +52,17 @@ function LastArticles() {
             touchMoveStopPropagation={true}
             loop={true}
             breakpoints={{
-              // وقتی صفحه از 640px بیشتر می‌شود
               640: {
-                slidesPerView: 1, // 2 اسلاید در هر نما
-                spaceBetween: 20, // فاصله بین اسلایدها
+                slidesPerView: 1,
+                spaceBetween: 20,
               },
-              // وقتی صفحه از 768px بیشتر می‌شود
               768: {
-                slidesPerView: 3, // 3 اسلاید در هر نما
-                spaceBetween: 30, // فاصله بین اسلایدها
+                slidesPerView: 3,
+                spaceBetween: 30,
               },
-              // وقتی صفحه از 1024px بیشتر می‌شود
               1024: {
-                slidesPerView: 4, // 4 اسلاید در هر نما
-                spaceBetween: 40, // فاصله بین اسلایدها
+                slidesPerView: 4,
+                spaceBetween: 40,
               },
             }}
             navigation={{
@@ -55,28 +70,18 @@ function LastArticles() {
               prevEl: ".swiper-button-prev",
             }}
             pagination={{ clickable: true }}
-            // scrollbar={{ draggable: true }}
-            onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
-            <SwiperSlide className="custom-slide">
-              <LastArticlesSlide className="custom-slide"></LastArticlesSlide>
-            </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-              <LastArticlesSlide className="custom-slide"></LastArticlesSlide>
-            </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-              <LastArticlesSlide className="custom-slide"></LastArticlesSlide>
-            </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-              <LastArticlesSlide className="custom-slide"></LastArticlesSlide>
-            </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-              <LastArticlesSlide className="custom-slide"></LastArticlesSlide>
-            </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-              <LastArticlesSlide className="custom-slide"></LastArticlesSlide>
-            </SwiperSlide>
+            {articlesData.slice(0,5).map((article) => (
+              <SwiperSlide key={article.id} className="custom-slide">
+                <LastArticlesSlide
+                  title={article.title}
+                  image={article.image}
+                  body={getShortBody(article.body)}
+                  className="custom-slide"
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
