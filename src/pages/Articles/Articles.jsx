@@ -13,16 +13,35 @@ function Articles() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [loading, setLoading] = useState(false); // وضعیت لودینگ
 
+  // useEffect(() => {
+  //   fetch(`http://localhost:3000/articles?category=${selectedCategory}`)
+  //     .then((res) => res.json())
+  //     .then((artilcles) => {
+  //       setArticlesData(artilcles);
+  //       setLoading(false); // غیرفعال کردن لودینگ پس از دریافت داده‌ها
+  //     });
+  // }, [selectedCategory]);
+
+
 
   useEffect(() => {
-    fetch(`http://localhost:3000/articles?category=${selectedCategory}`)
-      .then((res) => res.json())
-      .then((artilcles) => {
-        setArticlesData(artilcles);
-        setLoading(false); // غیرفعال کردن لودینگ پس از دریافت داده‌ها
-      });
+    setLoading(true); // فعال کردن لودینگ
+    const timer = setTimeout(() => { // تاخیر برای مشاهده لودینگ
+      fetch(`http://localhost:3000/articles?category=${selectedCategory}`)
+        .then((res) => res.json())
+        .then((articles) => {
+          setArticlesData(articles);
+          setLoading(false); // غیرفعال کردن لودینگ پس از دریافت داده‌ها
+        })
+        .catch(() => setLoading(false)); // در صورت بروز خطا، لودینگ غیرفعال شود
+    }, 800); // تاخیر 500 میلی‌ثانیه‌ای
+
+    return () => clearTimeout(timer); // پاک کردن تایمر در صورت تغییر دسته‌بندی قبل از تمام شدن تایمر
   }, [selectedCategory]);
 
+
+
+  
   const changeValueHandler = (event) => {
     setArticleShowNumber(event.target.value);
   };
@@ -104,36 +123,39 @@ function Articles() {
               </div>
             </section>
 
+            {loading ? (
+              <div className="loader"></div>
+            ) : (
+              <section className="articles-boxes">
+                {articlesData.map((article) => (
+                  <div className="articles-box" key={article.id}>
+                    <div className="articles-box__right">
+                      <img
+                        src={article.image}
+                        alt="article"
+                        className="articles-box__right-image"
+                      />
+                    </div>
 
-            <section className="articles-boxes">
-              {articlesData.map((article) => (
-                <div className="articles-box" key={article.id}>
-                  <div className="articles-box__right">
-                    <img
-                      src={article.image}
-                      alt="article"
-                      className="articles-box__right-image"
-                    />
+                    <div className="articles-box__left">
+                      <h2 className="articles-box__left-title">
+                        {article.title}
+                      </h2>
+                      <p className="articles-box__left-text">
+                        {getShortBody(article.body)}
+                      </p>
+                      <Link className="articles-box__left__text-link">
+                        مطالعه بیشتر ...
+                        <FaRegEye className="articles-box__left__text-link-icon" />
+                      </Link>
+                      <span className="articles-box__left-date">
+                        تاریخ انتشار : {article.releaseDate}
+                      </span>
+                    </div>
                   </div>
-
-                  <div className="articles-box__left">
-                    <h2 className="articles-box__left-title">
-                      {article.title}
-                    </h2>
-                    <p className="articles-box__left-text">
-                      {getShortBody(article.body)}
-                    </p>
-                    <Link className="articles-box__left__text-link">
-                      مطالعه بیشتر ...
-                      <FaRegEye className="articles-box__left__text-link-icon" />
-                    </Link>
-                    <span className="articles-box__left-date">
-                      تاریخ انتشار : {article.releaseDate}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </section>
+                ))}
+              </section>
+            )}
           </section>
         </div>
         <Footer />
