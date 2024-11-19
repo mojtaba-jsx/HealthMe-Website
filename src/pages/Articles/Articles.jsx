@@ -8,26 +8,34 @@ import { RiHealthBookLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { TbArticle } from "react-icons/tb";
 function Articles() {
+  const [articlesData, setArticlesData] = useState([]);
+  const [articleShowNumber, setArticleShowNumber] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [loading, setLoading] = useState(false); // وضعیت لودینگ
+
+
   useEffect(() => {
-    fetch("http://localhost:3000/articles")
+    fetch(`http://localhost:3000/articles?category=${selectedCategory}`)
       .then((res) => res.json())
       .then((artilcles) => {
         setArticlesData(artilcles);
+        setLoading(false); // غیرفعال کردن لودینگ پس از دریافت داده‌ها
       });
-  });
+  }, [selectedCategory]);
 
   const changeValueHandler = (event) => {
     setArticleShowNumber(event.target.value);
   };
-
-  const [articlesData, setArticlesData] = useState([]);
-  const [articleShowNumber, setArticleShowNumber] = useState(1);
 
   const getShortBody = (text, maxLength = 100) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
     return text; // اگر متن کوتاه‌تر از maxLength بود
+  };
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
   return (
     <>
@@ -42,28 +50,37 @@ function Articles() {
             <section className="articles-wrapper__menu">
               <div className="articles-wrapper__menu__category">
                 دسته بندی :
-                <select className="articles-wrapper__menu__category-select">
+                <select
+                  className="articles-wrapper__menu__category-select"
+                  onChange={handleCategoryChange}
+                >
                   <option
                     className="articles-wrapper__menu__category-option"
-                    value="food"
+                    value=""
+                  >
+                    همه
+                  </option>
+                  <option
+                    className="articles-wrapper__menu__category-option"
+                    value="تغذیه"
                   >
                     تغذیه سالم
                   </option>
                   <option
                     className="articles-wrapper__menu__category-option"
-                    value="workout"
+                    value="ورزش"
                   >
                     ورزش و تندرستی
                   </option>
                   <option
                     className="articles-wrapper__menu__category-option"
-                    value="health"
+                    value="بیماری"
                   >
                     بیماری ها
                   </option>
                   <option
                     className="articles-wrapper__menu__category-option"
-                    value="mental"
+                    value="سلامت روان"
                   >
                     سلامت روان
                   </option>
@@ -86,6 +103,7 @@ function Articles() {
                 <FaThList className="articles-wrapper__menu__box-model-icon" />
               </div>
             </section>
+
 
             <section className="articles-boxes">
               {articlesData.map((article) => (
@@ -116,11 +134,6 @@ function Articles() {
                 </div>
               ))}
             </section>
-
-            <button className="articles__btn">
-              نمایش مقاله های بیشتر
-              <TbArticle className="articles__btn-icon" />
-            </button>
           </section>
         </div>
         <Footer />
