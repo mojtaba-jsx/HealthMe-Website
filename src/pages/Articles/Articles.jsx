@@ -7,55 +7,56 @@ import { FaTh, FaThList } from "react-icons/fa";
 import { RiHealthBookLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { TbArticle } from "react-icons/tb";
+
 function Articles() {
   const [articlesData, setArticlesData] = useState([]);
-  const [articleShowNumber, setArticleShowNumber] = useState(1);
+  const [articleShowNumber, setArticleShowNumber] = useState(40);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [loading, setLoading] = useState(false); // وضعیت لودینگ
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:3000/articles?category=${selectedCategory}`)
-  //     .then((res) => res.json())
-  //     .then((artilcles) => {
-  //       setArticlesData(artilcles);
-  //       setLoading(false); // غیرفعال کردن لودینگ پس از دریافت داده‌ها
-  //     });
-  // }, [selectedCategory]);
-
-
+  const [loading, setLoading] = useState(false);
+  const [totalArticlesInCategory, setTotalArticlesInCategory] = useState(0);
 
   useEffect(() => {
-    setLoading(true); // فعال کردن لودینگ
-    const timer = setTimeout(() => { // تاخیر برای مشاهده لودینگ
-      fetch(`http://localhost:3000/articles?category=${selectedCategory}`)
+    setLoading(true);
+    const timer = setTimeout(() => {
+      const url =
+        selectedCategory === ""
+          ? `http://localhost:3000/articles`
+          : `http://localhost:3000/articles?category=${selectedCategory}`;
+
+      fetch(url)
         .then((res) => res.json())
         .then((articles) => {
           setArticlesData(articles);
-          setLoading(false); // غیرفعال کردن لودینگ پس از دریافت داده‌ها
+          setTotalArticlesInCategory(articles.length);
+          if (selectedCategory === "") {
+            setArticleShowNumber(articles.length);
+          } else {
+            setArticleShowNumber(10);
+          }
+          setLoading(false);
         })
-        .catch(() => setLoading(false)); // در صورت بروز خطا، لودینگ غیرفعال شود
-    }, 800); // تاخیر 500 میلی‌ثانیه‌ای
+        .catch(() => setLoading(false));
+    }, 800);
 
-    return () => clearTimeout(timer); // پاک کردن تایمر در صورت تغییر دسته‌بندی قبل از تمام شدن تایمر
+    return () => clearTimeout(timer);
   }, [selectedCategory]);
 
-
-
-  
   const changeValueHandler = (event) => {
-    setArticleShowNumber(event.target.value);
+    const value = Math.min(event.target.value, totalArticlesInCategory);
+    setArticleShowNumber(value);
   };
 
   const getShortBody = (text, maxLength = 100) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
-    return text; // اگر متن کوتاه‌تر از maxLength بود
+    return text;
   };
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
+
   return (
     <>
       <div className="articles">
@@ -113,11 +114,12 @@ function Articles() {
                   className="articles-wrapper__menu__number-input"
                   value={articleShowNumber}
                   onChange={changeValueHandler}
+                  max={totalArticlesInCategory}
                 />
               </div>
 
               <div className="articles-wrapper__menu__box-model">
-                نحوه ی نمایش نقالات :
+                نحوه ی نمایش مقالات :
                 <FaTh className="articles-wrapper__menu__box-model-icon" />
                 <FaThList className="articles-wrapper__menu__box-model-icon" />
               </div>
@@ -127,7 +129,7 @@ function Articles() {
               <div className="loader"></div>
             ) : (
               <section className="articles-boxes">
-                {articlesData.map((article) => (
+                {articlesData.slice(0, articleShowNumber).map((article) => (
                   <div className="articles-box" key={article.id}>
                     <div className="articles-box__right">
                       <img
