@@ -27,9 +27,7 @@
   flex-direction: column;
   gap: 1rem;
   border-radius: 1rem;
-}
-
-.article-info__top__texts-category {
+  padding-top: 1rem;
 }
 
 .article-info__top__texts-title {
@@ -59,7 +57,8 @@
   gap: 0.2rem;
 }
 
-.article-info__top__texts-time {
+.article-info__top__texts-time,
+.article-info__top__texts-category {
   color: var(--whiteColor);
   padding-right: 1rem;
   display: flex;
@@ -135,8 +134,6 @@
 .articles__add-comment {
   margin-top: 4rem;
 }
-
-
 
 .articles__add-comment__title-icon {
 }
@@ -214,8 +211,9 @@
   transition: all 120ms ease-in;
   cursor: pointer;
 }
-.articles__add-comment__form__btn:hover{
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.articles__add-comment__form__btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transform: scale(1.08);
 }
 .articles__add-comment__form__btn-icon {
@@ -223,14 +221,13 @@
   height: 2rem;
 }
 
-
-.articles__comments{
+.articles__comments {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
 }
 
-.articles__comment{
+.articles__comment {
   width: 88%;
   display: flex;
   margin: 1rem auto;
@@ -238,7 +235,12 @@
   border-radius: 0.5rem;
   padding: 1rem;
   gap: 1rem;
-  box-shadow: var(--primaryColor) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, var(--primaryColor) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+  box-shadow: var(--primaryColor) 0px 0px 0px 1px,
+    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+    var(--primaryColor) 0px 6px 6px -3px,
+    rgba(14, 63, 126, 0.04) 0px 12px 12px -6px,
+    rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
 }
 
 .articles__comments__title {
@@ -251,21 +253,20 @@
   margin-bottom: 2rem;
 }
 
-.articles__comment__name{
+.articles__comment__name {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1.2rem;
-  
 }
 
-.articles__comment__name-icon{
+.articles__comment__name-icon {
   color: var(--primaryColor);
   width: 2rem;
   height: 2rem;
 }
 
-.articles__comment-body{
+.articles__comment-body {
   line-height: 1.4rem;
   text-align: justify;
 }

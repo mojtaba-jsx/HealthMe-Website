@@ -44,14 +44,8 @@ function ArticleInfo() {
                   className="article-info__top-image"
                 />
                 <div className="article-info__top__texts">
-                  <span className="article-info__top__texts-category">
-                    # سلامتی
-                  </span>
                   <h1 className="article-info__top__texts-title">
-                    <FaPencilAlt
-                      className=""
-                      article-info__top__texts-title-icon
-                    />
+                    <FaPencilAlt className="article-info__top__texts-title-icon" />
                     {article.title}
                   </h1>
                   <span className="article-info__top__texts-date">
@@ -62,6 +56,9 @@ function ArticleInfo() {
                     <IoMdTime className="article-info__top__texts-time-icon" />
                     زمان مطالعه : {article.readTime} دقیقه
                   </span>
+                  <span className="article-info__top__texts-category">
+                    # {article.category}
+                  </span>
                 </div>
               </div>
 
@@ -70,8 +67,6 @@ function ArticleInfo() {
               </div>
             </div>
           ))}
-
-
 
           <div className="article-info__share">
             <div className="article-info__share__left">

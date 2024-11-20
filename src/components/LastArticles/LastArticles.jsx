@@ -72,11 +72,12 @@ function LastArticles() {
             pagination={{ clickable: true }}
             onSwiper={(swiper) => console.log(swiper)}
           >
-            {articlesData.slice(0,5).map((article) => (
+            {articlesData.slice(0, 5).map((article) => (
               <SwiperSlide key={article.id} className="custom-slide">
                 <LastArticlesSlide
                   title={article.title}
                   image={article.image}
+                  id={article.id}
                   body={getShortBody(article.body)}
                   className="custom-slide"
                 />
