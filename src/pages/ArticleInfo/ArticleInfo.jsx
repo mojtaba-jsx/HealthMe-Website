@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ArticleInfo.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -15,49 +16,62 @@ import { IoCheckboxOutline } from "react-icons/io5";
 import { FaPen } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 function ArticleInfo() {
+  const { id } = useParams();
+
+  const [articleInfo, setArticleInfo] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/articles?id=${id}`)
+      .then((res) => res.json())
+      .then((articleInfo) => {
+        setArticleInfo(articleInfo);
+      });
+  }, []);
+  console.log(articleInfo);
+
   return (
     <>
       <div className="article-info">
         <div className="container">
           <Navbar />
-          <div className="article-info__top">
-            <img
-              src="/images/water.jpg"
-              alt="article"
-              className="article-info__top-image"
-            />
-            <div className="article-info__top__texts">
-              <span className="article-info__top__texts-category">#سلامتی</span>
-              <h1 className="article-info__top__texts-title">
-                <FaPencilAlt className="" article-info__top__texts-title-icon />
-                چرا باید به اندازه کافی در طول روز آب بنوشیم ؟
-              </h1>
-              <span className="article-info__top__texts-date">
-                <MdOutlineCalendarMonth className="article-info__top__texts-date-icon" />
-                تاریخ انتشار : 22 مهر 1403
-              </span>
-              <span className="article-info__top__texts-time">
-                <IoMdTime className="article-info__top__texts-time-icon" />
-                زمان مطالعه : 10 دقیقه
-              </span>
-            </div>
-          </div>
 
-          <div className="article-info__bottom">
-            <p className="article-info__bottom-text">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
-              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
-              جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
-              طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان
-              فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
-              موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد
-              نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
-              دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
-          </div>
+          {articleInfo.map((article) => (
+            <div className="article-info__wrapper">
+              <div className="article-info__top">
+                <img
+                  src={article.image}
+                  alt="article"
+                  className="article-info__top-image"
+                />
+                <div className="article-info__top__texts">
+                  <span className="article-info__top__texts-category">
+                    # سلامتی
+                  </span>
+                  <h1 className="article-info__top__texts-title">
+                    <FaPencilAlt
+                      className=""
+                      article-info__top__texts-title-icon
+                    />
+                    {article.title}
+                  </h1>
+                  <span className="article-info__top__texts-date">
+                    <MdOutlineCalendarMonth className="article-info__top__texts-date-icon" />
+                    {article.releaseDate}
+                  </span>
+                  <span className="article-info__top__texts-time">
+                    <IoMdTime className="article-info__top__texts-time-icon" />
+                    زمان مطالعه : {article.readTime} دقیقه
+                  </span>
+                </div>
+              </div>
+
+              <div className="article-info__bottom">
+                <p className="article-info__bottom-text">{article.body}</p>
+              </div>
+            </div>
+          ))}
+
+
 
           <div className="article-info__share">
             <div className="article-info__share__left">

@@ -57,6 +57,8 @@ function Articles() {
     setSelectedCategory(event.target.value);
   };
 
+  const getArticleID = (articleID) => {};
+
   return (
     <>
       <div className="articles">
@@ -146,7 +148,10 @@ function Articles() {
                       <p className="articles-box__left-text">
                         {getShortBody(article.body)}
                       </p>
-                      <Link className="articles-box__left__text-link">
+                      <Link
+                        className="articles-box__left__text-link"
+                        to={`/articles/articleInfo/${article.id}`}
+                      >
                         مطالعه بیشتر ...
                         <FaRegEye className="articles-box__left__text-link-icon" />
                       </Link>

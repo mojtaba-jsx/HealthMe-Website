@@ -13,7 +13,7 @@ const routes = [
   { path: "/bmi", element: <BmiCalculator /> },
   { path: "/bmr", element: <BmrCalculator /> },
   { path: "/water", element: <WaterCalculator /> },
-  { path: "/articles/:articleInfo", element: <ArticleInfo /> },
+  { path: "/articles/articleInfo/:id", element: <ArticleInfo /> },
   { path: "/about-us", element: <AboutUs /> },
   { path: "/contact-us", element: <ContactUs /> },
 ];
