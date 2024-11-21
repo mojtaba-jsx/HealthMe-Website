@@ -28,7 +28,7 @@
   font-size: 1.2rem;
 }
 
-.bmr__images{
+.bmr__images {
   display: flex;
   align-items: center;
 }
@@ -97,47 +97,55 @@
   color: var(--primaryColor);
   font-weight: bold;
 }
+.bmi__logic__inputs__height-input::placeholder,
+.bmi__logic__inputs__weight-input::placeholder {
+  font-size: 1.2rem;
+}
+
+
 .bmi__logic__inputs__height-input:focus {
   box-shadow: var(--primaryColor) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.bmi__logic__inputs-btn{
-    padding: 1rem;
-    border-radius: 0.5rem;
-    width: 14rem;
-    border: none;
-    outline: none;
-    font-size: 1.4rem;
-    background-color: var(--primaryColor);
-    color: var(--whiteColor);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-    cursor: pointer;
-    transition: all 120ms ease-in;
+.bmi__logic__inputs-btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 14rem;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  cursor: pointer;
+  transition: all 120ms ease-in;
 }
-.bmi__logic__inputs-btn:hover{
-    transform: scale(1.04);
-}
-
-.bmi__logic-result{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+.bmi__logic__inputs-btn:hover {
+  transform: scale(1.04);
 }
 
-.bmi__logic-result-text{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.bmi__logic-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
-.bmi__logic-result-number{
-    font-size: 2.8rem;
-    color: var(--primaryColor);
+.bmi__logic-result-text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.bmi__logic-result-notif{
-    margin-top: 1rem;
+.bmi__logic-result-number {
+  font-size: 2.8rem;
+  color: var(--primaryColor);
+}
+
+.bmi__logic-result-notif {
+  margin-top: 1rem;
 }
