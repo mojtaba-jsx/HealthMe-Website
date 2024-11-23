@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import "./BmrCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { IoBodyOutline } from "react-icons/io5";
+
 function BmrCalculator() {
+  const [formData, setFormData] = useState({
+    gender: "man",
+    weight: "",
+    age: "",
+    height: "",
+    activityLevel: "",
+  });
+  const [bmr, setBmr] = useState(0);
+  const [ear, setEar] = useState(0);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const updatedValue = name === "activityLevel" ? parseFloat(value) : value;
+    setFormData({ ...formData, [name]: updatedValue });
+  };
+
+  const calculateBmr = () => {
+    const { gender, weight, age, height, activityLevel } = formData;
+
+    let calculatedBmr = 0;
+    if (gender === "man") {
+      calculatedBmr = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
+    } else if (gender === "woman") {
+      calculatedBmr = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
+    }
+
+    const calculatedEar = calculatedBmr * activityLevel;
+
+    setBmr(Math.round(calculatedBmr));
+    setEar(Math.round(calculatedEar));
+  };
+
+  const isButtonDisabled = !(
+    formData.weight &&
+    formData.age &&
+    formData.height &&
+    formData.activityLevel
+  );
+
   return (
     <>
       <div className="bmr">
@@ -64,35 +104,76 @@ function BmrCalculator() {
 
             <div className="bmr__inputs">
               <label className="bmr__inputs-label">جنسیت</label>
-              <select className="bmr__inputs-gender">
+              <select
+                name="gender"
+                value={formData.gender}
+                onChange={handleChange}
+                className="bmr__inputs-gender"
+              >
                 <option value="man">مرد</option>
                 <option value="woman">زن</option>
               </select>
-              <label className="bmr__inputs-label">وزن به کیلوگرم</label>
-              <input type="number" className="bmr__inputs-weight" value={30} />
+              <label className="bmr__inputs-label">وزن</label>
+              <input
+              min={0}
+                placeholder="مقدار را به کیلوگرم وارد کنید "
+                type="number"
+                name="weight"
+                value={formData.weight}
+                onChange={handleChange}
+                className="bmr__inputs-weight"
+              />
               <label className="bmr__inputs-label">سن</label>
-              <input value={30} type="number" className="bmr__inputs-age" />
-              <label className="bmr__inputs-label">قد به سانتی متر</label>
-              <input type="number" value={30} className="bmr__inputs-height" />
+              <input
+              min={0}
+                placeholder="چندسالته ؟"
+                type="number"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                className="bmr__inputs-age"
+              />
+              <label className="bmr__inputs-label">قد</label>
+              <input
+              min={0}
+                placeholder="مقدار را به سانتی متر وارد کنید"
+                type="number"
+                name="height"
+                value={formData.height}
+                onChange={handleChange}
+                className="bmr__inputs-height"
+              />
               <label htmlFor="" className="bmr__inputs-label">
                 میزان فعالیت
               </label>
-              <select className="bmr__inputs-select">
-                <option value="1/2">نشسته (بدون ورزش و ورزش خیلی کم)</option>
-
-                <option value="1/3">فعالیت کم (1 الی 3 ساعت در هفته)</option>
-
-                <option value="1/4">فعالیت متوسط (3 الی 5 ساعت در هفته)</option>
-
-                <option value="1/5">بسیار فعال (6 الی 7 ساعت در هفته)</option>
-
-                <option value="1/7">
+              <select
+                name="activityLevel"
+                value={formData.activityLevel}
+                onChange={handleChange}
+                className="bmr__inputs-select"
+              >
+                <option value="">انتخاب کنید</option>
+                <option value={1.2}>نشسته (بدون ورزش و ورزش خیلی کم)</option>
+                <option value={1.3}>فعالیت کم (1 الی 3 ساعت در هفته)</option>
+                <option value={1.4}>فعالیت متوسط (3 الی 5 ساعت در هفته)</option>
+                <option value={1.5}>بسیار فعال (6 الی 7 ساعت در هفته)</option>
+                <option value={1.7}>
                   فعالیت بسیار بالا (فعالیت سخت ورزشی و کاری)
                 </option>
               </select>
-              <button className="bmr__btn">محاسبه BMR</button>
+              <button
+                className={`bmr__btn ${isButtonDisabled ? "disabled" : ""}`}
+                onClick={calculateBmr}
+                disabled={isButtonDisabled}
+              >
+                محاسبه BMR
+              </button>
               <span className="bmr__result">
-                میزان BMR شما :<span className="bmr__result-value">30</span>
+                میزان BMR شما :<span className="bmr__result-value">{bmr}</span>
+              </span>
+              <span className="bmr__result">
+                کالری مورد نیاز روزانه شما :
+                <span className="bmr__result-value">{ear}</span>
               </span>
             </div>
           </div>
