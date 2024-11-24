@@ -110,6 +110,7 @@
   gap: 1rem;
   transition: all 120ms ease-in;
 }
+
 .articles-box:hover {
   transform: scale(1.02);
 }
@@ -175,17 +176,11 @@
   background-color: var(--primaryColor);
 }
 
-
-
-
-
-
-
 /* HTML: <div class="loader"></div> */
 .loader {
   width: fit-content;
   font-size: 40px;
-  font-family: system-ui,sans-serif;
+  font-family: system-ui, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   color: #0000;
@@ -198,5 +193,9 @@
   content: "LOADING";
 }
 @keyframes l1 {
-  to{background-size: 120% 100%}
+  to {
+    background-size: 120% 100%;
+  }
 }
+
+

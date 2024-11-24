@@ -132,7 +132,7 @@ function Articles() {
             ) : (
               <section className="articles-boxes">
                 {articlesData.slice(0, articleShowNumber).map((article) => (
-                  <div className="articles-box" key={article.id}>
+                  <div className="articles-box articles-box-status2" key={article.id}>
                     <div className="articles-box__right">
                       <img
                         src={article.image}

@@ -21,11 +21,12 @@
   font-size: 1.6rem;
   font-family: "dana-bold", Courier, monospace;
   font-weight: bold;
+  padding-top: 1rem;
 }
 
 .water-calculator__info-text {
   margin-top: 1rem;
-  line-height: 1.4rem;
+  line-height: 1.6rem;
   text-align: justify;
   font-size: 1.2rem;
 }
@@ -70,6 +71,10 @@
   color: var(--primaryColor);
   font-weight: bold;
 }
+.water-calculator__form-input::placeholder{
+  font-size: 1.2rem;
+  color: var(--primaryColor);
+}
 .water-calculator__form-select {
   width: 30rem;
   height: 4rem;
@@ -109,6 +114,7 @@
   font-size: 1.4rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
 }
@@ -116,4 +122,11 @@
 .water-calculator__result-value {
   font-size: 2.8rem;
   color: var(--primaryColor);
+}
+
+
+.water-calculator__btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
 }
