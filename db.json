@@ -1481,6 +1481,41 @@
       "postId": "40",
       "username": "fatemeh",
       "email": "leila@gmail.com"
+    },
+    {
+      "id": "f4db",
+      "username": "مجتبی",
+      "email": "mojtaba@gmail.com",
+      "text": "مقاله خوبی بود ",
+      "postId": "2"
+    },
+    {
+      "id": "5830",
+      "username": "مجتبی",
+      "email": "mojtaba@gmail.com",
+      "text": "مرسی از توضیحات کامل",
+      "postId": "2"
+    },
+    {
+      "id": "a18d",
+      "username": "علی",
+      "email": "ali@gmail.com",
+      "text": "خوبه",
+      "postId": "2"
+    },
+    {
+      "id": "99e6",
+      "username": "مجتبی",
+      "email": "mojtaba@gmail.com",
+      "text": "توضیحات کاملی بود ",
+      "postId": "2"
+    },
+    {
+      "id": "3ace",
+      "username": "قدیر",
+      "email": "ghadir@gmail.com",
+      "text": "خوب بود ",
+      "postId": "2"
     }
   ]
 }

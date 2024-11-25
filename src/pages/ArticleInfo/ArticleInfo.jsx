@@ -19,6 +19,11 @@ function ArticleInfo() {
   const { id } = useParams(); // Get post ID from URL
   const [articleInfo, setArticleInfo] = useState([]);
   const [comments, setComments] = useState([]); // State for comments
+  const [newComment, setNewComment] = useState({
+    username: "",
+    email: "",
+    text: "",
+  }); // State for new comment form
 
   useEffect(() => {
     // Fetch article info
@@ -35,6 +40,42 @@ function ArticleInfo() {
         setComments(data);
       });
   }, [id]); // Dependency array ensures this runs when `id` changes
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewComment((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle form submission
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const commentToPost = {
+      ...newComment,
+      postId: id, // Attach post ID
+    };
+
+    fetch(`http://localhost:3000/comments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(commentToPost),
+    })
+      .then((res) => res.json())
+      .then((savedComment) => {
+        // Add the new comment at the beginning of the comments array
+        setComments((prev) => [...prev, savedComment]);
+
+        // Clear form inputs
+        setNewComment({ username: "", email: "", text: "" });
+      })
+      .catch((err) => console.error("Error posting comment:", err));
+  };
+
+  // Check if the form is valid
+  const isFormValid =
+    newComment.username.trim() !== "" &&
+    newComment.email.trim() !== "" &&
+    newComment.text.trim() !== "";
 
   return (
     <>
@@ -95,7 +136,10 @@ function ArticleInfo() {
           </div>
 
           <div className="articles__add-comment">
-            <form className="articles__add-comment__form">
+            <form
+              className="articles__add-comment__form"
+              onSubmit={handleFormSubmit}
+            >
               <h3 className="articles__add-comment__form__title">
                 ثبت نظر
                 <FaPen className="articles__add-comment__form__title-icon" />
@@ -104,32 +148,46 @@ function ArticleInfo() {
                 نام و نام خانوادگی :
                 <input
                   type="text"
+                  name="username"
                   className="articles__add-comment__form__name-input"
+                  value={newComment.username}
+                  onChange={handleInputChange}
                 />
               </label>
               <label className="articles__add-comment__form__email">
                 ایمیل :
                 <input
                   type="email"
+                  name="email"
                   className="articles__add-comment__form__email-input"
+                  value={newComment.email}
+                  onChange={handleInputChange}
                 />
               </label>
               <textarea
+                name="text"
                 placeholder="متن نظر را وارد کنید ..."
                 className="articles__add-comment__form__text"
+                value={newComment.text}
+                onChange={handleInputChange}
               ></textarea>
-              <button className="articles__add-comment__form__btn">
+              <button
+                className="articles__add-comment__form__btn"
+                disabled={!isFormValid} // Disable button if form is invalid
+              >
                 ثبت نظر
                 <IoCheckboxOutline className="articles__add-comment__form__btn-icon" />
               </button>
             </form>
           </div>
 
-          <div className="articles__comments">
+          <div className="articles__comments-header">
             <h2 className="articles__comments__title">
               نظرات
               <FaRegComment className="articles__comments__title-icon" />
             </h2>
+          </div>
+          <div className="articles__comments">
             {comments.map((comment) => (
               <div className="articles__comment" key={comment.id}>
                 <span className="articles__comment__name">
