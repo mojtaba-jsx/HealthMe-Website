@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./ArticleInfo.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -15,19 +14,27 @@ import { FaRegComment } from "react-icons/fa";
 import { IoCheckboxOutline } from "react-icons/io5";
 import { FaPen } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
-function ArticleInfo() {
-  const { id } = useParams();
 
+function ArticleInfo() {
+  const { id } = useParams(); // Get post ID from URL
   const [articleInfo, setArticleInfo] = useState([]);
+  const [comments, setComments] = useState([]); // State for comments
 
   useEffect(() => {
+    // Fetch article info
     fetch(`http://localhost:3000/articles?id=${id}`)
       .then((res) => res.json())
-      .then((articleInfo) => {
-        setArticleInfo(articleInfo);
+      .then((data) => {
+        setArticleInfo(data);
       });
-  }, []);
-  console.log(articleInfo);
+
+    // Fetch comments for this post
+    fetch(`http://localhost:3000/comments?postId=${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setComments(data);
+      });
+  }, [id]); // Dependency array ensures this runs when `id` changes
 
   return (
     <>
@@ -36,7 +43,7 @@ function ArticleInfo() {
           <Navbar />
 
           {articleInfo.map((article) => (
-            <div className="article-info__wrapper">
+            <div className="article-info__wrapper" key={article.id}>
               <div className="article-info__top">
                 <img
                   src={article.image}
@@ -123,18 +130,15 @@ function ArticleInfo() {
               نظرات
               <FaRegComment className="articles__comments__title-icon" />
             </h2>
-            <div className="articles__comment">
-              <span className="articles__comment__name">
-                <FaRegUser className="articles__comment__name-icon" />
-                یوزر جدید
-              </span>
-              <p className="articles__comment-body">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-              </p>
-            </div>
+            {comments.map((comment) => (
+              <div className="articles__comment" key={comment.id}>
+                <span className="articles__comment__name">
+                  <FaRegUser className="articles__comment__name-icon" />
+                  {comment.username}
+                </span>
+                <p className="articles__comment-body">{comment.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
