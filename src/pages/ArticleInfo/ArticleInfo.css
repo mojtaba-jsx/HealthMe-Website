@@ -293,3 +293,25 @@
   line-height: 1.4rem;
   text-align: justify;
 }
+
+
+.loader-articleinfo{
+  width: fit-content;
+  font-size: 80px;
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0000;
+  -webkit-text-stroke: 1px var(--primaryColor);
+  background: conic-gradient(var(--primaryColor) 0 0) 0/0% 100% no-repeat text;
+  animation: l1 1s linear infinite;
+  margin: 10rem auto;
+}
+.loader-articleinfo:before {
+  content: "LOADING";
+}
+@keyframes l1 {
+  to {
+    background-size: 120% 100%;
+  }
+}
