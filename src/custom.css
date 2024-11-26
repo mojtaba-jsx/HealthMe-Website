@@ -479,6 +479,10 @@ a {
   .articles-wrapper__menu div {
     margin-bottom: 1.2rem;
   }
+  .articles-boxes.list-view .articles-box__right img{
+    width: inherit;
+    height: 10rem;
+  }
   /* * BMR Component */
   .bmr__inputs input {
     width: 18rem;

@@ -6,7 +6,6 @@ import Footer from "../../components/Footer/Footer";
 import { FaTh, FaThList } from "react-icons/fa";
 import { RiHealthBookLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
-import { TbArticle } from "react-icons/tb";
 
 function Articles() {
   const [articlesData, setArticlesData] = useState([]);
@@ -14,6 +13,7 @@ function Articles() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [loading, setLoading] = useState(false);
   const [totalArticlesInCategory, setTotalArticlesInCategory] = useState(0);
+  const [isListView, setIsListView] = useState(false); // اضافه کردن state
 
   useEffect(() => {
     setLoading(true);
@@ -46,18 +46,20 @@ function Articles() {
     setArticleShowNumber(value);
   };
 
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const toggleViewHandler = (viewType) => {
+    setIsListView(viewType === "list");
+  };
+
   const getShortBody = (text, maxLength = 100) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
     return text;
   };
-
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
-  };
-
-  const getArticleID = (articleID) => {};
 
   return (
     <>
@@ -112,6 +114,7 @@ function Articles() {
               <div className="articles-wrapper__menu__number">
                 تعداد مقاله های نمایش داده شده:
                 <input
+                min={1}
                   type="number"
                   className="articles-wrapper__menu__number-input"
                   value={articleShowNumber}
@@ -122,17 +125,31 @@ function Articles() {
 
               <div className="articles-wrapper__menu__box-model">
                 نحوه ی نمایش مقالات :
-                <FaTh className="articles-wrapper__menu__box-model-icon" />
-                <FaThList className="articles-wrapper__menu__box-model-icon" />
+                <FaTh
+                  className={`articles-wrapper__menu__box-model-icon ${
+                    !isListView ? "active" : ""
+                  }`}
+                  onClick={() => toggleViewHandler("grid")}
+                />
+                <FaThList
+                  className={`articles-wrapper__menu__box-model-icon ${
+                    isListView ? "active" : ""
+                  }`}
+                  onClick={() => toggleViewHandler("list")}
+                />
               </div>
             </section>
 
             {loading ? (
               <div className="loader"></div>
             ) : (
-              <section className="articles-boxes">
+              <section
+                className={`articles-boxes ${
+                  isListView ? "list-view" : "grid-view"
+                }`}
+              >
                 {articlesData.slice(0, articleShowNumber).map((article) => (
-                  <div className="articles-box articles-box-status2" key={article.id}>
+                  <div className="articles-box" key={article.id}>
                     <div className="articles-box__right">
                       <img
                         src={article.image}

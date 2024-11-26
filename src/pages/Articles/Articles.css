@@ -199,3 +199,39 @@
 }
 
 
+
+
+.articles-boxes.grid-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.articles-boxes.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.articles-boxes.list-view .articles-box{
+  width: 80%;
+  margin: 1rem auto;
+}
+.articles-boxes.list-view .articles-box__right img{
+  width: auto;
+  height: 14rem;
+}
+
+.articles-wrapper__menu__box-model-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primaryColor);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.articles-wrapper__menu__box-model-icon.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
