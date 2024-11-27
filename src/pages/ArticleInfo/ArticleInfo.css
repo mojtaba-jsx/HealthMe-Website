@@ -15,6 +15,7 @@
   object-fit: cover;
   height: auto;
   border-radius: 1rem;
+  /* opacity: 0.9; */
 }
 
 .article-info__top__texts {
@@ -39,6 +40,10 @@
   align-items: center;
   gap: 0.2rem;
   font-weight: bold;
+
+  color: var(--whiteColor);
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px 0 var(--darkColor), 2px 2px 0 var(--darkColor);
 }
 .article-info__top__texts-title::before {
   content: "";
@@ -262,7 +267,7 @@
     rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
 }
 
-.articles__comments-header{
+.articles__comments-header {
   margin-top: 1rem;
 }
 
@@ -294,8 +299,7 @@
   text-align: justify;
 }
 
-
-.loader-articleinfo{
+.loader-articleinfo {
   width: fit-content;
   font-size: 80px;
   font-family: system-ui, sans-serif;

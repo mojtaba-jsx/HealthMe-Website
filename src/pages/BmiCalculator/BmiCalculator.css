@@ -149,3 +149,14 @@
 .bmi__logic-result-notif {
   margin-top: 1rem;
 }
+
+
+.bmi__logic__inputs-btn.disabled {
+  background-color: #ccc; /* رنگ کم‌رنگ */
+  cursor: not-allowed; /* نشانگر غیر قابل کلیک */
+}
+
+.bmi__logic__inputs-btn:not(.disabled) {
+  background-color: #007bff; /* رنگ عادی دکمه */
+  cursor: pointer; /* نشانگر قابل کلیک */
+}

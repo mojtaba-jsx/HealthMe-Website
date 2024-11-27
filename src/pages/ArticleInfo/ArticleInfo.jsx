@@ -152,6 +152,7 @@ function ArticleInfo() {
                 <label className="articles__add-comment__form__name">
                   نام و نام خانوادگی :
                   <input
+                  placeholder="نام و نام خانوادگی خود را وارد کنید "
                     type="text"
                     name="username"
                     className="articles__add-comment__form__name-input"
@@ -162,6 +163,7 @@ function ArticleInfo() {
                 <label className="articles__add-comment__form__email">
                   ایمیل :
                   <input
+                  placeholder="ایمیل خود را وارد کنید"
                     type="email"
                     name="email"
                     className="articles__add-comment__form__email-input"

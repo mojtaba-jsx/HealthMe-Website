@@ -3,6 +3,7 @@ import "./BmiCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { GiBodyBalance } from "react-icons/gi";
+
 function BmiCalculator() {
   const [heightValue, setHeightValue] = useState("");
   const [weightValue, setWeightValue] = useState("");
@@ -26,6 +27,9 @@ function BmiCalculator() {
     setHeightValue("");
     setWeightValue("");
   };
+
+  // بررسی اینکه دکمه فعال باشد یا نه
+  const isButtonDisabled = !(heightValue > 0 && weightValue > 0);
 
   return (
     <>
@@ -94,8 +98,11 @@ function BmiCalculator() {
               </div>
 
               <button
-                className="bmi__logic__inputs-btn"
+                className={`bmi__logic__inputs-btn ${
+                  isButtonDisabled ? "disabled" : ""
+                }`}
                 onClick={bmiCalculatorFunc}
+                disabled={isButtonDisabled}
               >
                 محاسبه BMI{" "}
               </button>

@@ -199,6 +199,25 @@ li {
 a {
   text-decoration: none;
 }
+/* !Custom ScrollBar */
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColor);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lightNavyBlue);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray);
+}
 
 /* !=======Responsive Media Queries======= */
 
@@ -365,6 +384,12 @@ a {
     width: 80%;
     text-align: center;
   }
+  /* * BMI Component */
+  .bmr__images-img,
+  .bmr__images-formula-img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -479,7 +504,7 @@ a {
   .articles-wrapper__menu div {
     margin-bottom: 1.2rem;
   }
-  .articles-boxes.list-view .articles-box__right img{
+  .articles-boxes.list-view .articles-box__right img {
     width: inherit;
     height: 10rem;
   }
@@ -574,6 +599,10 @@ a {
   }
   .health-up__left-text {
     font-size: 1rem;
+    width: 16rem;
+    margin: 1rem auto;
+    line-height: 1.4rem;
+    text-align: center;
   }
   /* * Articles Component */
   .articles-box__left-title {
@@ -581,13 +610,22 @@ a {
   }
   .articles-wrapper__menu div {
     flex-direction: column;
+    gap: 1rem;
   }
   .articles__btn {
     font-size: 1.2rem;
   }
+  .articles-wrapper__menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
   /* * Article Info Component */
   .article-info__top__texts-title {
     font-size: 1.2rem;
+  }
+  .articles__add-comment__form__name-input::placeholder,
+  .articles__add-comment__form__email-input::placeholder {
+    font-size: 0.8rem;
   }
   /* * BMI Component */
   .bmi__logic__inputs__height-input,
@@ -637,7 +675,26 @@ a {
   .articles__comments__title {
     font-size: 2rem;
   }
+  /* * Footer Component */
+  .after-footer__text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 320px) {
+  /* * BMR Component */
+  .bmi__logic__inputs__height-input,
+  .bmi__logic__inputs__weight-input {
+    width: 14rem;
+  }
+  .bmi__logic__inputs__weight-input::placeholder,
+  .bmi__logic__inputs__height-input::placeholder {
+    font-size: 1rem;
+  }
+  .bmi__logic-result-text {
+    flex-direction: column;
+  }
 }
