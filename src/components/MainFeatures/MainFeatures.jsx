@@ -1,9 +1,11 @@
+// *: Modules Import
 import React, { useEffect } from "react";
 import "./MainFeatures.css";
-import { Link } from "react-router-dom";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+// *: Icons Import
+import { IoMdArrowRoundBack } from "react-icons/io";
 function MainFeatures({
   title,
   text,
@@ -14,8 +16,8 @@ function MainFeatures({
 }) {
   useEffect(() => {
     AOS.init({
-      duration: 2000, // مدت زمان انیمیشن‌ها به میلی‌ثانیه
-      once: false, // فقط یکبار انیمیشن اجرا می‌شود
+      duration: 2000,
+      once: false,
     });
   }, []);
 

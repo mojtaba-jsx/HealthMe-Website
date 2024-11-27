@@ -1,7 +1,9 @@
+// *: Modules Import
 import React, { useState } from "react";
 import "./BmrCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+// *: Icons Import
 import { IoBodyOutline } from "react-icons/io5";
 
 function BmrCalculator() {
@@ -21,6 +23,7 @@ function BmrCalculator() {
     setFormData({ ...formData, [name]: updatedValue });
   };
 
+  // *: BMR Calculator
   const calculateBmr = () => {
     const { gender, weight, age, height, activityLevel } = formData;
 
@@ -115,7 +118,7 @@ function BmrCalculator() {
               </select>
               <label className="bmr__inputs-label">وزن</label>
               <input
-              min={0}
+                min={0}
                 placeholder="مقدار را به کیلوگرم وارد کنید "
                 type="number"
                 name="weight"
@@ -125,7 +128,7 @@ function BmrCalculator() {
               />
               <label className="bmr__inputs-label">سن</label>
               <input
-              min={0}
+                min={0}
                 placeholder="چندسالته ؟"
                 type="number"
                 name="age"
@@ -135,7 +138,7 @@ function BmrCalculator() {
               />
               <label className="bmr__inputs-label">قد</label>
               <input
-              min={0}
+                min={0}
                 placeholder="مقدار را به سانتی متر وارد کنید"
                 type="number"
                 name="height"

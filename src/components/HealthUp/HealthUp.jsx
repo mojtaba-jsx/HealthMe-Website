@@ -1,5 +1,7 @@
+// *: Modules Import
 import React from "react";
 import "./HealthUp.css";
+// *: Icons Import
 import { FaRegSmile } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 

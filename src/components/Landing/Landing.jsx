@@ -1,7 +1,9 @@
+// *: Modules Import
 import React from "react";
 import "./Landing.css";
-import LandingHeatIcon from "./LandingHeatIcon";
 import Typewriter from "typewriter-effect";
+// *: Icons Import
+import LandingHeatIcon from "./LandingHeatIcon";
 function Landing() {
   return (
     <>
@@ -19,7 +21,7 @@ function Landing() {
                 loop: true,
                 delay: 100,
                 deleteSpeed: 100,
-                pauseFor:2000
+                pauseFor: 2000,
               }}
             />
           </h1>

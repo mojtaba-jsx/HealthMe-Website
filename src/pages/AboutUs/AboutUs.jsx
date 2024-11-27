@@ -1,3 +1,4 @@
+// *: Modules Import
 import React, { useEffect } from "react";
 import "./AboutUs.css";
 import AOS from "aos";
@@ -8,8 +9,8 @@ import Footer from "../../components/Footer/Footer";
 function AboutUs() {
   useEffect(() => {
     AOS.init({
-      duration: 2200, // مدت زمان انیمیشن‌ها به میلی‌ثانیه
-      once: false, // فقط یکبار انیمیشن اجرا می‌شود
+      duration: 2200,
+      once: false,
     });
   }, []);
   return (

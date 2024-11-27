@@ -1,3 +1,4 @@
+// *: Modules Import
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
@@ -5,6 +6,7 @@ import "aos/dist/aos.css";
 import "./ContactUs.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+// *: Icons Import
 import { FaLocationDot } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -14,8 +16,8 @@ import { BiLogoGmail } from "react-icons/bi";
 function ContactUs() {
   useEffect(() => {
     AOS.init({
-      duration: 2200, // مدت زمان انیمیشن‌ها به میلی‌ثانیه
-      once: false, // فقط یکبار انیمیشن اجرا می‌شود
+      duration: 2200,
+      once: false,
     });
   }, []);
   return (

@@ -1,8 +1,9 @@
+// *: Modules Import
 import React, { useRef } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
-// import HealthIcon from "../HealthIcon/HealthIcon";
+// *: Icons Import
 import { MdHealthAndSafety } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineArticle } from "react-icons/md";
@@ -11,7 +12,6 @@ import { IoBodyOutline } from "react-icons/io5";
 import { GiWaterBottle } from "react-icons/gi";
 import { MdConnectWithoutContact } from "react-icons/md";
 import { RiFileInfoLine } from "react-icons/ri";
-import { RiHealthBookFill } from "react-icons/ri";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
@@ -29,13 +29,11 @@ function Navbar() {
         <button className="mobile-menu-btn" onClick={showMobileMenu}>
           <IoMenu className="mobile-menu-btn__icon" />
         </button>
-        {/* ! Navbar Logo */}
         <Link to={"/"} className="navbar__logo">
           <Logo className="navbar__logo-icon" />
           <span className="navbar__logo-text gradien-2">منِ سلامت</span>
           <MdHealthAndSafety className="navbar__logo-health-icon" />
         </Link>
-        {/* ! Navbar list */}
         <ul className="navbar__list">
           <li className="navbar__list__item">
             <Link className="navbar__list__link" to={"/"}>

@@ -1,20 +1,22 @@
+// *: Modules Import
 import React, { useState, useEffect } from "react";
 import "./Articles.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+// *: Icons Import
 import { FaTh, FaThList } from "react-icons/fa";
 import { RiHealthBookLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
-
 function Articles() {
   const [articlesData, setArticlesData] = useState([]);
   const [articleShowNumber, setArticleShowNumber] = useState(40);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [loading, setLoading] = useState(false);
   const [totalArticlesInCategory, setTotalArticlesInCategory] = useState(0);
-  const [isListView, setIsListView] = useState(false); // اضافه کردن state
+  const [isListView, setIsListView] = useState(false);
 
+  // *: Get Articles By Category
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
@@ -50,10 +52,11 @@ function Articles() {
     setSelectedCategory(event.target.value);
   };
 
+  // *: View Button Handler
   const toggleViewHandler = (viewType) => {
     setIsListView(viewType === "list");
   };
-
+  // *: Show Short Text Of Article Body
   const getShortBody = (text, maxLength = 100) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
@@ -114,7 +117,7 @@ function Articles() {
               <div className="articles-wrapper__menu__number">
                 تعداد مقاله های نمایش داده شده:
                 <input
-                min={1}
+                  min={1}
                   type="number"
                   className="articles-wrapper__menu__number-input"
                   value={articleShowNumber}

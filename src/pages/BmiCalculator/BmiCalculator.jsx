@@ -1,7 +1,9 @@
+// *: Modules Import Import
 import React, { useState } from "react";
 import "./BmiCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+// *: Icons Import
 import { GiBodyBalance } from "react-icons/gi";
 
 function BmiCalculator() {
@@ -17,18 +19,16 @@ function BmiCalculator() {
     setWeightValue(e.target.value);
   };
 
+  // *: BMI Calculator
   const bmiCalculatorFunc = () => {
     let heightInMeters = heightValue / 100;
-
     let bmi = weightValue / (heightInMeters * heightInMeters);
 
     setBmiValue(bmi.toFixed(2));
-
     setHeightValue("");
     setWeightValue("");
   };
 
-  // بررسی اینکه دکمه فعال باشد یا نه
   const isButtonDisabled = !(heightValue > 0 && weightValue > 0);
 
   return (

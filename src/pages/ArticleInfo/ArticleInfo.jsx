@@ -1,8 +1,10 @@
+// *: Modules Import
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./ArticleInfo.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+// *: Icons Import
 import { FaTelegram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
@@ -24,29 +26,27 @@ function ArticleInfo() {
     email: "",
     text: "",
   });
-  const [loading, setLoading] = useState(true); // اضافه کردن state برای بارگذاری
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true); // شروع لودر
+    setLoading(true);
 
-    // Fetch article info
+    // *: Get Article Data By ID
     fetch(`http://localhost:3000/articles?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setArticleInfo(data);
       });
-
-    // Fetch comments for this post
+    // *: Get Comments By Post ID
     fetch(`http://localhost:3000/comments?postId=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setComments(data);
       })
       .finally(() => {
-        // اضافه کردن تأخیر قبل از خاموش شدن لودر
         setTimeout(() => {
-          setLoading(false); // بعد از 1 ثانیه لودر خاموش می‌شود
-        }, 1000); // مدت تأخیر 1 ثانیه
+          setLoading(false);
+        }, 1000);
       });
   }, [id]);
 
@@ -62,6 +62,7 @@ function ArticleInfo() {
       postId: id,
     };
 
+    // *: Send New Comment To Server
     fetch(`http://localhost:3000/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -75,6 +76,7 @@ function ArticleInfo() {
       .catch((err) => console.error("Error posting comment:", err));
   };
 
+  // *: Form Validation
   const isFormValid =
     newComment.username.trim() !== "" &&
     newComment.email.trim() !== "" &&
@@ -83,7 +85,7 @@ function ArticleInfo() {
   return (
     <>
       {loading ? (
-        <div className="loader-articleinfo"></div> // نمایش loader در زمان بارگذاری
+        <div className="loader-articleinfo"></div>
       ) : (
         <div className="article-info">
           <div className="container">
@@ -152,7 +154,7 @@ function ArticleInfo() {
                 <label className="articles__add-comment__form__name">
                   نام و نام خانوادگی :
                   <input
-                  placeholder="نام و نام خانوادگی خود را وارد کنید "
+                    placeholder="نام و نام خانوادگی خود را وارد کنید "
                     type="text"
                     name="username"
                     className="articles__add-comment__form__name-input"
@@ -163,7 +165,7 @@ function ArticleInfo() {
                 <label className="articles__add-comment__form__email">
                   ایمیل :
                   <input
-                  placeholder="ایمیل خود را وارد کنید"
+                    placeholder="ایمیل خود را وارد کنید"
                     type="email"
                     name="email"
                     className="articles__add-comment__form__email-input"
@@ -208,7 +210,7 @@ function ArticleInfo() {
           </div>
         </div>
       )}
-      {loading ? null : <Footer />} {/* فوتر حالا فقط بعد از لودینگ نمایش داده می‌شود */}
+      {loading ? null : <Footer />}{" "}
     </>
   );
 }

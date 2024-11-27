@@ -1,7 +1,9 @@
+// *: Modules Import
 import React, { useState } from "react";
 import "./WaterCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+// *: Icons Import
 import { GiWaterBottle } from "react-icons/gi";
 
 function WaterCalculator() {
@@ -12,7 +14,7 @@ function WaterCalculator() {
   const [climate, setClimate] = useState("");
   const [waterNeed, setWaterNeed] = useState(0);
 
-  // بررسی اعتبار ورودی‌ها
+  // *: Form Validation
   const isFormValid = () => {
     return (
       weight > 0 &&
@@ -24,24 +26,24 @@ function WaterCalculator() {
   };
 
   const calculateWaterIntake = () => {
-    let baseWater = weight * 30; // 30 ml per kg
+    let baseWater = weight * 30; // *: 30 ml per kg
 
-    // Adjust for activity level
+    // *:/ Adjust for activity level
     if (activityLevel === "medium") baseWater += 500;
     if (activityLevel === "high") baseWater += 1000;
 
-    // Adjust for climate
+    // *: Adjust for climate
     if (climate === "hot") baseWater += 1000;
     if (climate === "cold") baseWater -= 500;
 
-    // Adjust for gender
+    // *: Adjust for gender
     if (gender === "male") baseWater *= 1.1;
 
-    // Adjust for age
+    // *: Adjust for age
     if (age < 18) baseWater *= 1.05;
     if (age > 60) baseWater *= 0.95;
 
-    setWaterNeed(Math.round(baseWater)); // Round to nearest whole number
+    setWaterNeed(Math.round(baseWater));
   };
 
   return (

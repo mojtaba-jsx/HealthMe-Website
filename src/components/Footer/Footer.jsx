@@ -1,6 +1,9 @@
+// *: Modules Import
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import Logo from "../Logo/Logo";
+// *: Icons Import
 import { MdHealthAndSafety } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import { MdLocalPhone } from "react-icons/md";
@@ -8,10 +11,10 @@ import { IoLocationOutline } from "react-icons/io5";
 import { TiTick } from "react-icons/ti";
 import { FaHeart } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import Logo from "../Logo/Logo";
 function Footer() {
   return (
     <>
+      // *: Footer Section
       <div className="footer">
         <div className="footer__row1">
           <div className="footer__logo">
@@ -94,7 +97,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-
+      // *: After Footer Section
       <div className="after-footer">
         <span className="after-footer__text">
           توسعه داده شده با
