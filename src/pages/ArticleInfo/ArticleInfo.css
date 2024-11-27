@@ -1,3 +1,5 @@
+/* ! ArticleInfo Component Styles */
+
 .article-info {
   padding-bottom: 4rem;
 }
@@ -15,7 +17,6 @@
   object-fit: cover;
   height: auto;
   border-radius: 1rem;
-  /* opacity: 0.9; */
 }
 
 .article-info__top__texts {
@@ -140,9 +141,6 @@
   margin-top: 4rem;
 }
 
-.articles__add-comment__title-icon {
-}
-
 .articles__add-comment__form {
   display: flex;
   flex-direction: column;
@@ -156,9 +154,6 @@
   font-size: 2rem;
   color: var(--primaryColor);
   margin-bottom: 1rem;
-}
-
-.articles__add-comment__form__title-icon {
 }
 
 .articles__add-comment__form__name,
@@ -216,7 +211,7 @@
   transition: all 120ms ease-in;
   cursor: pointer;
 }
-/* استایل دکمه در حالت عادی */
+
 .articles__add-comment__form__btn {
   background-color: #007bff;
   color: white;
@@ -227,12 +222,11 @@
   transition: all 120ms ease-in;
 }
 
-/* استایل دکمه در حالت غیر فعال */
 .articles__add-comment__form__btn:disabled {
-  background-color: #c0c0c0; /* رنگ خاکستری کم‌رنگ */
-  color: #666666; /* متن کم‌رنگ‌تر */
+  background-color: #c0c0c0;
+  color: #666666;
   cursor: not-allowed;
-  opacity: 0.7; /* کمی شفاف‌تر */
+  opacity: 0.7;
 }
 
 .articles__add-comment__form__btn:hover {

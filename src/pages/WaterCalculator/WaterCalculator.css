@@ -1,4 +1,6 @@
-.water-calculator__wrapper{
+/* ! Water Calculator Component Styles */
+
+.water-calculator__wrapper {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -71,7 +73,7 @@
   color: var(--primaryColor);
   font-weight: bold;
 }
-.water-calculator__form-input::placeholder{
+.water-calculator__form-input::placeholder {
   font-size: 1.2rem;
   color: var(--primaryColor);
 }
@@ -123,7 +125,6 @@
   font-size: 2.8rem;
   color: var(--primaryColor);
 }
-
 
 .water-calculator__btn:disabled {
   background-color: #ccc;

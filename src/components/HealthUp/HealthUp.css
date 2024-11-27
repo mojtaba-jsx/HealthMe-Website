@@ -1,49 +1,45 @@
+/* ! HealthUp Component Styles */
 
-
-
-.health-up{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 16rem;
-    margin-bottom: 4rem;
-
+.health-up {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16rem;
+  margin-bottom: 4rem;
 }
 
-.health-up__right{
-    width: 50%;
-    
+.health-up__right {
+  width: 50%;
 }
 
-.health-up__right-image{
-    width: 100%;
-    height: 100%;
+.health-up__right-image {
+  width: 100%;
+  height: 100%;
 }
 
-.health-up__left{
-    margin-left: 4rem;
-    width: 50%;
+.health-up__left {
+  margin-left: 4rem;
+  width: 50%;
 }
 
-.health-up__left-title{
-    font-size: 5rem;
-    font-family: 'dana-bold', Courier, monospace;
-    color: var(--primaryColor);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    
+.health-up__left-title {
+  font-size: 5rem;
+  font-family: "dana-bold", Courier, monospace;
+  color: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.health-up__left-title-icon{
-    width: 6rem;
-    height: 6rem;
-    transition: all 120ms ease-in;
+.health-up__left-title-icon {
+  width: 6rem;
+  height: 6rem;
+  transition: all 120ms ease-in;
 }
-.health-up__left-title-icon:hover{
-    transform: scale(1.2);
+.health-up__left-title-icon:hover {
+  transform: scale(1.2);
 }
-.health-up__left-text{
-    margin-top: 1rem;
-    font-size: 1.4rem;
+.health-up__left-text {
+  margin-top: 1rem;
+  font-size: 1.4rem;
 }
