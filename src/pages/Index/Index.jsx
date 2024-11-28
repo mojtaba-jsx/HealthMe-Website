@@ -13,7 +13,7 @@ function Index() {
       id: 1,
       title: "به راحتی BMI خود را محاسبه کنید",
       text: "شاخص توده بدنی یا بی‌ام‌آی (به انگلیسی: body mass index، مخفف BMI) سنجشی آماری برای مقایسه وزن و قد یک فرد است. در واقع این سنجش میزان چاقی را اندازه‌گیری نمی‌کند بلکه ابزاری مناسب است تا سلامت وزن فرد با توجه به قدش تخمین زده شود. این شاخص در بین سال‌های ۱۸۳۰ تا ۱۸۵۰ توسط آدولف کوتله دانشمند بلژیکی ابداع شد",
-      image: "https://s8.uupload.ir/files/about-us_6h73.png",
+      image: "https://s8.uupload.ir/files/bmi-feature_uqeq.png",
       flex: "row",
       icon: "GiBodyBalance",
       featurePath: "/bmi",

@@ -36,7 +36,7 @@ function AboutUs() {
           <div className="about-us__image">
             <img
               data-aos="zoom-in"
-              src="./images/about-us.png"
+              src="https://s8.uupload.ir/files/about-us_838y.png"
               alt="AboutUs"
               className="about-us__image-tag"
             />
