@@ -29,7 +29,7 @@ function ContactUs() {
             <div className="contact-us__info__right">
               <img
                 data-aos="zoom-in"
-                src="./images/contact-us.png"
+                src="https://s8.uupload.ir/files/contact-us_6j2b.png"
                 alt="ContactUs"
                 className="contact-us__info__right-image"
               />

@@ -36,8 +36,8 @@ function Landing() {
 
         <div className="landing__left">
           <img
-            src="./images/Landing.png"
-            alt=""
+            src="https://s8.uupload.ir/files/landing_3ixe.png"
+            alt="Loading ..."
             className="landing__left-image"
           />
         </div>

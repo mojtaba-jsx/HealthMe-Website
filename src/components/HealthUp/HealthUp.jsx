@@ -11,7 +11,7 @@ function HealthUp() {
       <div className="health-up">
         <div className="health-up__right">
           <img
-            src="./images/health-up.png"
+            src="https://s8.uupload.ir/files/health-up_q0xs.png"
             alt="health"
             className="health-up__right-image"
           />

@@ -68,7 +68,7 @@ function BmrCalculator() {
                 برای حفظ زندگی، کالری می‌سوزاند
               </p>
               <img
-                src="./images/bmr.png"
+                src="https://s8.uupload.ir/files/bmr_d3h1.png"
                 alt="bmr"
                 className="bmr-main__formula"
               />

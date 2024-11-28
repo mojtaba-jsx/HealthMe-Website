@@ -69,7 +69,7 @@ function WaterCalculator() {
             </p>
             <div className="water-calculator__wrapper">
               <img
-                src="./images/water-info.png"
+                src="https://s8.uupload.ir/files/water-info_jtay.png"
                 alt="water"
                 className="water-calculator__info-image"
               />

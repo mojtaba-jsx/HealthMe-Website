@@ -56,12 +56,12 @@ function BmiCalculator() {
           </div>
           <div className="bmr__images">
             <img
-              src="./images/bmi-formula.png"
+              src="https://s8.uupload.ir/files/bmi-formula_uqrh.png"
               alt="bmi"
               className="bmr__images-formula-img"
             />
             <img
-              src="./images/BMI-1.png"
+              src="https://s8.uupload.ir/files/bmi-1_hx7q.png"
               alt="bmi"
               className="bmr__images-img"
             />
