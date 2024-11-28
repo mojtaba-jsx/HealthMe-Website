@@ -168,6 +168,9 @@ function Articles() {
                       <p className="articles-box__left-text">
                         {getShortBody(article.body)}
                       </p>
+                      <span className="articles-box__left-date">
+                        تاریخ انتشار : {article.releaseDate}
+                      </span>
                       <Link
                         className="articles-box__left__text-link"
                         to={`/articles/articleInfo/${article.id}`}
@@ -175,9 +178,6 @@ function Articles() {
                         مطالعه بیشتر ...
                         <FaRegEye className="articles-box__left__text-link-icon" />
                       </Link>
-                      <span className="articles-box__left-date">
-                        تاریخ انتشار : {article.releaseDate}
-                      </span>
                     </div>
                   </div>
                 ))}
