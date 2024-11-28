@@ -239,11 +239,51 @@
   height: 2rem;
 }
 
-.articles__add-comment__form-alert{
+.articles__add-comment__form-alert {
   font-size: 1.2rem;
   color: var(--redColor);
   margin-top: 1rem;
 }
+.articles__add-comment-reload-btn {
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--greenColor);
+  color: var(--whiteColor);
+  margin: 1rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: all 120ms ease-in;
+}
+.articles__add-comment-reload-btn:hover {
+  transform: scale(1.04);
+}
+
+.articles__add-comment-reload-btn-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+
+
+.articles__add-comment-reload-btn:disabled {
+  background-color: #B0BEC5; /* رنگ خاکستری برای دکمه غیرفعال */
+  cursor: not-allowed;
+}
+
+.articles__add-comment-reload-btn:disabled .articles__add-comment-reload-btn-icon {
+  opacity: 0.5; /* کم کردن شفافیت آیکون زمانی که دکمه غیرفعال است */
+}
+
+
+
+
 
 .articles__comments {
   display: flex;
