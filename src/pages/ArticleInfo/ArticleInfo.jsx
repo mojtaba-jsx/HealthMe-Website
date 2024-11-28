@@ -1,10 +1,9 @@
-// *: Modules Import
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./ArticleInfo.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-// *: Icons Import
+//  Icons Import
 import { FaTelegram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
@@ -31,14 +30,14 @@ function ArticleInfo() {
   useEffect(() => {
     setLoading(true);
 
-    // *: Get Article Data By ID
-    fetch(`http://localhost:3000/articles?id=${id}`)
+    //  Get Article Data By ID
+    fetch(`https://health-me.liara.run/articles?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setArticleInfo(data);
       });
-    // *: Get Comments By Post ID
-    fetch(`http://localhost:3000/comments?postId=${id}`)
+    //  Get Comments By Post ID
+    fetch(`https://health-me.liara.run/comments?postId=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setComments(data);
@@ -62,25 +61,46 @@ function ArticleInfo() {
       postId: id,
     };
 
-    // *: Send New Comment To Server
-    fetch(`http://localhost:3000/comments`, {
+    //  Send New Comment To Server
+    fetch(`https://health-me.liara.run/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(commentToPost),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Error posting comment");
+        }
+        return res.json();
+      })
       .then((savedComment) => {
         setComments((prev) => [...prev, savedComment]);
         setNewComment({ username: "", email: "", text: "" });
+        // رفرش صفحه بعد از ارسال کامنت
+        window.location.reload();
       })
-      .catch((err) => console.error("Error posting comment:", err));
+      .catch((err) => {
+        console.error("Error posting comment:", err);
+        // حتی در صورت بروز خطا، صفحه رفرش شود
+        window.location.reload();
+      });
   };
 
-  // *: Form Validation
+  //  Form Validation
   const isFormValid =
     newComment.username.trim() !== "" &&
     newComment.email.trim() !== "" &&
     newComment.text.trim() !== "";
+
+  useEffect(() => {
+    if (!loading) {
+      // اسکرول به بخش کامنت‌ها بعد از رفرش صفحه
+      const commentsSection = document.getElementById("comments-section");
+      if (commentsSection) {
+        commentsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [comments, loading]);
 
   return (
     <>
@@ -196,7 +216,7 @@ function ArticleInfo() {
                 <FaRegComment className="articles__comments__title-icon" />
               </h2>
             </div>
-            <div className="articles__comments">
+            <div className="articles__comments" id="comments-section">
               {comments.map((comment) => (
                 <div className="articles__comment" key={comment.id}>
                   <span className="articles__comment__name">
@@ -210,7 +230,7 @@ function ArticleInfo() {
           </div>
         </div>
       )}
-      {loading ? null : <Footer />}{" "}
+      {loading ? null : <Footer />}
     </>
   );
 }

@@ -1,9 +1,9 @@
-// *: Modules Import
+//  Modules Import
 import React, { useRef } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
-// *: Icons Import
+//  Icons Import
 import { MdHealthAndSafety } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineArticle } from "react-icons/md";

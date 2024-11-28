@@ -1,10 +1,10 @@
-// *: Modules Import
+//  Modules Import
 import React, { useState, useEffect } from "react";
 import "./Articles.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-// *: Icons Import
+//  Icons Import
 import { FaTh, FaThList } from "react-icons/fa";
 import { RiHealthBookLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
@@ -16,14 +16,14 @@ function Articles() {
   const [totalArticlesInCategory, setTotalArticlesInCategory] = useState(0);
   const [isListView, setIsListView] = useState(false);
 
-  // *: Get Articles By Category
+  //  Get Articles By Category
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
       const url =
         selectedCategory === ""
-          ? `http://localhost:3000/articles`
-          : `http://localhost:3000/articles?category=${selectedCategory}`;
+          ? `https://health-me.liara.run/articles`
+          : `https://health-me.liara.run/articles?category=${selectedCategory}`;
 
       fetch(url)
         .then((res) => res.json())
@@ -52,11 +52,11 @@ function Articles() {
     setSelectedCategory(event.target.value);
   };
 
-  // *: View Button Handler
+  // View Button Handler
   const toggleViewHandler = (viewType) => {
     setIsListView(viewType === "list");
   };
-  // *: Show Short Text Of Article Body
+  //  Show Short Text Of Article Body
   const getShortBody = (text, maxLength = 100) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";

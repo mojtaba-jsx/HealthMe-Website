@@ -1,9 +1,9 @@
-// *: Modules Import Import
+//  Modules Import Import
 import React, { useState } from "react";
 import "./BmiCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-// *: Icons Import
+//  Icons Import
 import { GiBodyBalance } from "react-icons/gi";
 
 function BmiCalculator() {
@@ -19,7 +19,7 @@ function BmiCalculator() {
     setWeightValue(e.target.value);
   };
 
-  // *: BMI Calculator
+  //  BMI Calculator
   const bmiCalculatorFunc = () => {
     let heightInMeters = heightValue / 100;
     let bmi = weightValue / (heightInMeters * heightInMeters);

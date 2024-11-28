@@ -1,9 +1,9 @@
-// *: Modules Import
+//  Modules Import
 import React, { useState } from "react";
 import "./BmrCalculator.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-// *: Icons Import
+//  Icons Import
 import { IoBodyOutline } from "react-icons/io5";
 
 function BmrCalculator() {
@@ -23,7 +23,7 @@ function BmrCalculator() {
     setFormData({ ...formData, [name]: updatedValue });
   };
 
-  // *: BMR Calculator
+  //  BMR Calculator
   const calculateBmr = () => {
     const { gender, weight, age, height, activityLevel } = formData;
 

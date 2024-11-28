@@ -1,21 +1,21 @@
-// *: Modules Import
+//  Modules Import
 import React, { useEffect, useState } from "react";
 import "./LastArticles.css";
 import LastArticlesSlide from "../LastArticlesSlide/LastArticlesSlide";
-// *: Swiper Js
+//  Swiper Js
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-// *: Icons Import
+//  Icons Import
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 function LastArticles() {
-  // *: Get Articles Data Form Server
+  //  Get Articles Data Form Server
   useEffect(() => {
-    fetch("http://localhost:3000/articles")
+    fetch("https://health-me.liara.run/articles")
       .then((res) => res.json())
       .then((articles) => {
         setArticlesData(articles);
@@ -25,7 +25,7 @@ function LastArticles() {
   const [articlesData, setArticlesData] = useState([]);
   console.log(articlesData);
 
-  // *: Short Text For Show In Article Card
+  // Short Text For Show In Article Card
   const getShortBody = (text, maxLength = 100) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
@@ -45,7 +45,7 @@ function LastArticles() {
             <IoIosArrowBack className="swiper-navigation-icon" />
           </div>
         </div>
-        // *: LastArticles Slider Swiper
+        {/* LastArticles Slider Swiper  */}
         <div className="last-articles__slider">
           <Swiper
             className="last-articles-swiper"
@@ -71,7 +71,7 @@ function LastArticles() {
               },
             }}
             navigation={{
-              nextEl: ".swiper-button-next", // اتصال دکمه‌های سفارشی
+              nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
             }}
             pagination={{ clickable: true }}

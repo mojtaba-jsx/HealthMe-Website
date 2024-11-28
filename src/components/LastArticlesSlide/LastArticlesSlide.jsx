@@ -1,8 +1,8 @@
-// *: Modules Import
+//  Modules Import
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LastArticlesSlide.css";
-// *: Icons Import
+//  Icons Import
 import { IoIosArrowBack } from "react-icons/io";
 function LastArticlesSlide({ title, image, body, id }) {
   return (

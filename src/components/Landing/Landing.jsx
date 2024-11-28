@@ -1,8 +1,8 @@
-// *: Modules Import
+//  Modules Import
 import React from "react";
 import "./Landing.css";
 import Typewriter from "typewriter-effect";
-// *: Icons Import
+//  Icons Import
 import LandingHeatIcon from "./LandingHeatIcon";
 function Landing() {
   return (

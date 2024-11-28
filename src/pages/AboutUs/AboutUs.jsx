@@ -1,4 +1,4 @@
-// *: Modules Import
+//  Modules Import
 import React, { useEffect } from "react";
 import "./AboutUs.css";
 import AOS from "aos";

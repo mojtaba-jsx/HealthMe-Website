@@ -1,10 +1,10 @@
-// *: Modules Import
+//  Modules Import
 import React, { useEffect } from "react";
 import "./MainFeatures.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-// *: Icons Import
+//  Icons Import
 import { IoMdArrowRoundBack } from "react-icons/io";
 function MainFeatures({
   title,
