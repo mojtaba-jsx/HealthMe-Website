@@ -239,6 +239,12 @@
   height: 2rem;
 }
 
+.articles__add-comment__form-alert{
+  font-size: 1.2rem;
+  color: var(--redColor);
+  margin-top: 1rem;
+}
+
 .articles__comments {
   display: flex;
   flex-direction: column-reverse;

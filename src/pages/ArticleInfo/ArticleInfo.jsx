@@ -74,15 +74,12 @@ function ArticleInfo() {
         return res.json();
       })
       .then((savedComment) => {
+        // اضافه کردن کامنت جدید به آرایه کامنت‌ها بدون نیاز به رفرش صفحه
         setComments((prev) => [...prev, savedComment]);
         setNewComment({ username: "", email: "", text: "" });
-        // رفرش صفحه بعد از ارسال کامنت
-        window.location.reload();
       })
       .catch((err) => {
         console.error("Error posting comment:", err);
-        // حتی در صورت بروز خطا، صفحه رفرش شود
-        window.location.reload();
       });
   };
 
@@ -92,15 +89,7 @@ function ArticleInfo() {
     newComment.email.trim() !== "" &&
     newComment.text.trim() !== "";
 
-  useEffect(() => {
-    if (!loading) {
-      // اسکرول به بخش کامنت‌ها بعد از رفرش صفحه
-      const commentsSection = document.getElementById("comments-section");
-      if (commentsSection) {
-        commentsSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [comments, loading]);
+
 
   return (
     <>
@@ -207,6 +196,9 @@ function ArticleInfo() {
                   ثبت نظر
                   <IoCheckboxOutline className="articles__add-comment__form__btn-icon" />
                 </button>
+                <span className="articles__add-comment__form-alert">
+                  اگر کامنت شما نمایش داده نشد صفحه را رفرش کنید . 
+                </span>
               </form>
             </div>
 

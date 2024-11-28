@@ -627,6 +627,11 @@ a {
   .articles__add-comment__form__email-input::placeholder {
     font-size: 0.8rem;
   }
+  .articles__add-comment__form-alert{
+    width: 18rem;
+    text-align: center;
+    line-height: 1.4em;
+  }
   /* * BMI Component */
   .bmi__logic__inputs__height-input,
   .bmi__logic__inputs__weight-input {
