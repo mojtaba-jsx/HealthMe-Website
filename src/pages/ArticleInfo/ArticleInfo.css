@@ -245,6 +245,27 @@
   margin-top: 1rem;
 }
 
+.articles__add-reload{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--redColor);
+  color: var(--whiteColor);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 120ms ease-in;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.articles__add-reload:hover{
+  transform: scale(1.04);
+}
+
+
 .articles__comments {
   display: flex;
   flex-direction: column-reverse;

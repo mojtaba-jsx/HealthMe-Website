@@ -15,6 +15,7 @@ import { FaRegComment } from "react-icons/fa";
 import { IoCheckboxOutline } from "react-icons/io5";
 import { FaPen } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
+import { IoReload } from "react-icons/io5";
 
 function ArticleInfo() {
   const { id } = useParams();
@@ -197,8 +198,12 @@ function ArticleInfo() {
                   <IoCheckboxOutline className="articles__add-comment__form__btn-icon" />
                 </button>
                 <span className="articles__add-comment__form-alert">
-                  اگر کامنت شما نمایش داده نشد صفحه را رفرش کنید . 
+                  اگر نظر شما نمایش داده نشد صفحه را مجدد بارگذاری کنید. 
                 </span>
+                <button className="articles__add-reload">
+                  بارگذاری مجدد
+                  <IoReload className="articles__add-reload-icon" />
+                  </button>
               </form>
             </div>
 
