@@ -633,6 +633,10 @@ a {
     text-align: center;
     line-height: 1.4em;
   }
+  .articles__comments__title{
+      padding-right: 0.5rem;
+  }
+
   /* * BMI Component */
   .bmi__logic__inputs__height-input,
   .bmi__logic__inputs__weight-input {

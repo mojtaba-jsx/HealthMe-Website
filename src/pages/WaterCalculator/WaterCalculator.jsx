@@ -84,7 +84,7 @@ function WaterCalculator() {
                   وزن:
                   <input
                     min={0}
-                    placeholder="مقدار وزرن خود را به کیلوگرم وارد کنید"
+                    placeholder="مقدار را به کیلوگرم وارد کنید"
                     type="number"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
