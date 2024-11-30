@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "./ArticleInfo.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-//  Icons Import
+// Icons Import
 import { FaTelegram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
@@ -12,7 +12,7 @@ import { IoMdTime } from "react-icons/io";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaRegShareSquare } from "react-icons/fa";
 import { FaRegComment } from "react-icons/fa";
-import { IoCheckboxOutline, IoReload } from "react-icons/io5";
+import { IoCheckboxOutline } from "react-icons/io5";
 import { FaPen } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import { IoReload } from "react-icons/io5";
@@ -31,14 +31,14 @@ function ArticleInfo() {
   useEffect(() => {
     setLoading(true);
 
-    //  Get Article Data By ID
+    // Get Article Data By ID
     fetch(`https://health-me.liara.run/articles?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setArticleInfo(data);
       });
 
-    //  Get Comments By Post ID
+    // Get Comments By Post ID
     fetch(`https://health-me.liara.run/comments?postId=${id}`)
       .then((res) => res.json())
       .then((data) => {
@@ -63,7 +63,7 @@ function ArticleInfo() {
       postId: id,
     };
 
-    //  Send New Comment To Server
+    // Send New Comment To Server
     fetch(`https://health-me.liara.run/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -76,33 +76,26 @@ function ArticleInfo() {
         return res.json();
       })
       .then((savedComment) => {
+        // اضافه کردن کامنت جدید به آرایه کامنت‌ها بدون نیاز به رفرش صفحه
         setComments((prev) => [...prev, savedComment]);
-        setNewComment({ username: "", email: "", text: "" });
+        setNewComment({ username: "", email: "", text: "" }); // پاک کردن فرم
       })
       .catch((err) => {
         console.error("Error posting comment:", err);
+      })
+      .finally(() => {
+        // رفرش صفحه و اسکرول به قسمت کامنت‌ها
+        window.location.reload();
+        setTimeout(() => {
+          const commentSection = document.getElementById("comments-section");
+          if (commentSection) {
+            commentSection.scrollIntoView({ behavior: "smooth", block: "end" });
+          }
+        }, 500); // تاخیر برای اطمینان از رفرش شدن صفحه
       });
   };
 
-  const handleReloadAndScroll = () => {
-    localStorage.setItem("scrollToComments", "true");
-    window.location.reload();
-  };
-
-  // Scroll to comments section after reload
-  useEffect(() => {
-    if (!loading) {
-      const shouldScroll = localStorage.getItem("scrollToComments");
-      if (shouldScroll === "true") {
-        const commentsSection = document.getElementById("comments-section");
-        if (commentsSection) {
-          commentsSection.scrollIntoView({ behavior: "smooth" });
-        }
-        localStorage.removeItem("scrollToComments");
-      }
-    }
-  }, [loading]);
-
+  // Form Validation
   const isFormValid =
     newComment.username.trim() !== "" &&
     newComment.email.trim() !== "" &&
@@ -213,26 +206,6 @@ function ArticleInfo() {
                   ثبت نظر
                   <IoCheckboxOutline className="articles__add-comment__form__btn-icon" />
                 </button>
-                <span className="articles__add-comment__form-alert">
-<<<<<<< HEAD
-                  اگر نظر شما نمایش داده نشد صفحه را مجدد بارگذاری کنید. 
-                </span>
-                <button className="articles__add-reload">
-                  بارگذاری مجدد
-                  <IoReload className="articles__add-reload-icon" />
-                  </button>
-=======
-                  اگر کامنت شما نمایش داده نشد صفحه را رفرش کنید .
-                </span>
-                <button
-                  className="articles__add-comment-reload-btn"
-                  onClick={handleReloadAndScroll}
-                  disabled={!isFormValid}
-                >
-                  بارگذاری مجدد
-                  <IoReload className="articles__add-comment-reload-btn-icon" />
-                </button>
->>>>>>> 0f3f4c1262d9a6d2963ceec8715624cf1aa36c82
               </form>
             </div>
 
