@@ -57,19 +57,20 @@ function LastArticles() {
             touchMoveStopPropagation={true}
             loop={true}
             breakpoints={{
-              640: {
+              480: {
                 slidesPerView: 1,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 30,
               },
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
             }}
+            
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
