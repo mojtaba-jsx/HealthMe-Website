@@ -1,34 +1,36 @@
-/* ! LastArticlesSlide Component Styles */
-
 .last-articles-slide {
-  display: flex;
-  flex-direction: column;
-  border-radius: 1rem;
-  gap: 2rem;
-  height: 100%;
-  width: 100%;
+  width: 18rem;
+  height: 24rem;
   margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .last-articles-slide__top {
-  width: 100%;
+  height: 50%;
 }
 
 .last-articles-slide__top-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   border-radius: 1rem;
-  transition: all 120ms ease-in;
 }
-.last-articles-slide__top-image:hover {
-  transform: scale(1.04);
+
+.last-articles-slide__bottom {
+  margin-top: 2rem;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .last-articles-slide__bottom-title {
-  font-size: 1.2rem;
   font-family: "dana-bold", Courier, monospace;
-  text-shadow: 1px 1px 0 #bcbcbc, 4px 4px 0 #c2c0c0;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
 }
 
 .last-articles-slide__bottom-text {
@@ -38,33 +40,22 @@
 
 .last-articles-slide__bottom__link {
   display: flex;
-  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  color: var(--black);
+  display: flex;
   justify-content: space-between;
-  gap: 0.2rem;
-  color: var(--darkColor);
-  font-family: "dana-bold", Courier, monospace;
-  margin-top: 2rem;
-  border-radius: 1rem;
-  padding: 0.5rem;
   transition: all 120ms ease-in;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  width: 21rem;
-  margin: 0 auto;
+  margin-top: auto;
 }
 
 .last-articles-slide__bottom__link:hover {
   background-color: var(--primaryColor);
   color: var(--whiteColor);
-}
-.last-articles-slide__bottom__link:hover
-  .last-articles-slide__bottom__link-icon {
-  background-color: var(--primaryColor);
+  /* transform: translateY(-10px); */
 }
 
 .last-articles-slide__bottom__link-icon {
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 1rem;
 }

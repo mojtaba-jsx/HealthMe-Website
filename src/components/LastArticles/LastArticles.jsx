@@ -50,27 +50,29 @@ function LastArticles() {
           <Swiper
             className="last-articles-swiper"
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={4}
-            autoHeight={true}
             touchStartPreventDefault={false}
             touchMoveStopPropagation={true}
             loop={true}
             breakpoints={{
-              480: {
+              576: {
                 slidesPerView: 1,
-                spaceBetween: 20,
+                spaceBetween: 10,
               },
+
               768: {
                 slidesPerView: 2,
-                spaceBetween: 30,
+                spaceBetween: 50,
               },
+
               1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
+                slidesPerView: 4,
+                spaceBetween: 260,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 260,
               },
             }}
-            
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",

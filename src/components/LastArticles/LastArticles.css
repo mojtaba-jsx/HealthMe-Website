@@ -20,30 +20,10 @@
   background-color: var(--primaryColor);
   margin-bottom: 1rem;
 }
-.last-articles__slider {
-  height: 20rem !important;
-  /* background-color: red; */
-}
-.last-articles-swiper {
-  height: 500px !important;
-}
-.swiper-slide {
-  width: 300px !important;
-  height: 400px !important;
-}
 
-.custom-slide {
-  width: 350px !important;
-  height: 400px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-  overflow: hidden;
-  padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+.last-articles-swiper{
+  padding-top: 2rem !important;
+  padding-bottom: 4rem !important;
 }
 
 /* ! Slider Btns */
